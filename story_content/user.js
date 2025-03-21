@@ -31,25 +31,102 @@ if (element.requestFullscreen) {
 window.Script2 = function()
 {
   var player = GetPlayer();
+var text = player.GetVar("belepes");
+player.SetVar("belepes", text.slice(0, -1));
+}
+
+window.Script3 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("belepes"); 
+player.SetVar("belepes", currentText + "1");
+}
+
+window.Script4 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("belepes"); 
+player.SetVar("belepes", currentText + "1");
+}
+
+window.Script5 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("belepes"); 
+player.SetVar("belepes", currentText + "1");
+}
+
+window.Script6 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("belepes"); 
+player.SetVar("belepes", currentText + "1");
+}
+
+window.Script7 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("belepes"); 
+player.SetVar("belepes", currentText + "1");
+}
+
+window.Script8 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("belepes"); 
+player.SetVar("belepes", currentText + "1");
+}
+
+window.Script9 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("belepes"); 
+player.SetVar("belepes", currentText + "1");
+}
+
+window.Script10 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("belepes"); 
+player.SetVar("belepes", currentText + "1");
+}
+
+window.Script11 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("belepes"); 
+player.SetVar("belepes", currentText + "1");
+}
+
+window.Script12 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("belepes"); 
+player.SetVar("belepes", currentText + "1");
+}
+
+window.Script13 = function()
+{
+  var player = GetPlayer();
 var currentText = player.GetVar("Variable1"); 
 player.SetVar("Variable1", currentText + "A");
 }
 
-window.Script3 = function()
+window.Script14 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("Variable1"); 
 player.SetVar("Variable1", currentText + "B");
 }
 
-window.Script4 = function()
+window.Script15 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("Variable1"); 
 player.SetVar("Variable1", currentText + "C");
 }
 
-window.Script5 = function()
+window.Script16 = function()
 {
   var player = GetPlayer();
 var text = player.GetVar("Variable1");
