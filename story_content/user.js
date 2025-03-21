@@ -46,63 +46,63 @@ window.Script4 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "1");
+player.SetVar("belepes", currentText + "2");
 }
 
 window.Script5 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "1");
+player.SetVar("belepes", currentText + "3");
 }
 
 window.Script6 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "1");
+player.SetVar("belepes", currentText + "4");
 }
 
 window.Script7 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "1");
+player.SetVar("belepes", currentText + "5");
 }
 
 window.Script8 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "1");
+player.SetVar("belepes", currentText + "6");
 }
 
 window.Script9 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "1");
+player.SetVar("belepes", currentText + "7");
 }
 
 window.Script10 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "1");
+player.SetVar("belepes", currentText + "8");
 }
 
 window.Script11 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "1");
+player.SetVar("belepes", currentText + "9");
 }
 
 window.Script12 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "1");
+player.SetVar("belepes", currentText + "0");
 }
 
 window.Script13 = function()
