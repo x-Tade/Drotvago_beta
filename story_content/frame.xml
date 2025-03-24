@@ -13,7 +13,7 @@
         <options>
           <option name="title_enabled" value="false">
             <options>
-              <option name="title_text" value="Drotvago_beta_v0.13" />
+              <option name="title_text" value="Drotvago_beta_v0.14" />
             </options>
           </option>
           <option name="logo_enabled" value="false">
@@ -1579,6 +1579,12 @@
         <slidelink slideid="_player.6qsfIiibzpU" displaytext="2 játékos" expand="true" type="slide">
           <links>
             <slidelink slideid="_player.6qsfIiibzpU.5ckeMmQ0mmA" displaytext="Untitled Slide" expand="false" type="slide" />
+          </links>
+        </slidelink>
+        <slidelink slideid="_player.5rxEXiQC6BO" displaytext="Hétvégi ház" expand="true" type="slide">
+          <links>
+            <slidelink slideid="_player.5rxEXiQC6BO.6mljXljfwJX" displaytext="Hétvégi ház külső" expand="false" type="slide" />
+            <slidelink slideid="_player.5rxEXiQC6BO.5oZYPAFBj0C" displaytext="Hétvégi ház belső" expand="false" type="slide" />
           </links>
         </slidelink>
       </links>

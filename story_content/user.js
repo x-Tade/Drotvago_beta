@@ -2154,4 +2154,266 @@ if (element.requestFullscreen) {
 
 }
 
+window.Script192 = function()
+{
+  var player = GetPlayer();
+var text = player.GetVar("szinvalto");
+player.SetVar("szinvalto", text.slice(0, -1));
+}
+
+window.Script193 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("szinvalto"); 
+player.SetVar("szinvalto", currentText + "🟡");
+}
+
+window.Script194 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("szinvalto"); 
+player.SetVar("szinvalto", currentText + "🔴");
+}
+
+window.Script195 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("szinvalto"); 
+player.SetVar("szinvalto", currentText + "⚪");
+}
+
+window.Script196 = function()
+{
+  var element = document.documentElement;
+if (element.requestFullscreen) {
+    element.requestFullscreen();
+} else if (element.mozRequestFullScreen) { // Firefox
+    element.mozRequestFullScreen();
+} else if (element.webkitRequestFullscreen) { // Chrome, Safari
+    element.webkitRequestFullscreen();
+} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
+    element.msRequestFullscreen();
+}
+
+}
+
+window.Script197 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa1");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index + 1) % runak.length;
+
+player.SetVar("runa1", runak[index]);
+
+}
+
+window.Script198 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa1");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index - 1 + runak.length) % runak.length;
+
+player.SetVar("runa1", runak[index]);
+
+}
+
+window.Script199 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa2");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index + 1) % runak.length;
+
+player.SetVar("runa2", runak[index]);
+
+}
+
+window.Script200 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa3");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index + 1) % runak.length;
+
+player.SetVar("runa3", runak[index]);
+
+}
+
+window.Script201 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa4");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index + 1) % runak.length;
+
+player.SetVar("runa4", runak[index]);
+
+}
+
+window.Script202 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa2");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index - 1 + runak.length) % runak.length;
+
+player.SetVar("runa2", runak[index]);
+
+}
+
+window.Script203 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa3");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index - 1 + runak.length) % runak.length;
+
+player.SetVar("runa3", runak[index]);
+
+}
+
+window.Script204 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa4");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index - 1 + runak.length) % runak.length;
+
+player.SetVar("runa4", runak[index]);
+
+}
+
+window.Script205 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu1");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index + 1) % abc.length;
+
+player.SetVar("betu1", abc[index]);
+}
+
+window.Script206 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu1");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index - 1 + abc.length) % abc.length;
+
+player.SetVar("betu1", abc[index]);
+
+}
+
+window.Script207 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu2");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index + 1) % abc.length;
+
+player.SetVar("betu2", abc[index]);
+}
+
+window.Script208 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu3");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index + 1) % abc.length;
+
+player.SetVar("betu3", abc[index]);
+}
+
+window.Script209 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu4");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index + 1) % abc.length;
+
+player.SetVar("betu4", abc[index]);
+}
+
+window.Script210 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu2");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index - 1 + abc.length) % abc.length;
+
+player.SetVar("betu2", abc[index]);
+
+}
+
+window.Script211 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu3");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index - 1 + abc.length) % abc.length;
+
+player.SetVar("betu3", abc[index]);
+
+}
+
+window.Script212 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu4");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index - 1 + abc.length) % abc.length;
+
+player.SetVar("betu4", abc[index]);
+
+}
+
+window.Script213 = function()
+{
+  var element = document.documentElement;
+if (element.requestFullscreen) {
+    element.requestFullscreen();
+} else if (element.mozRequestFullScreen) { // Firefox
+    element.mozRequestFullScreen();
+} else if (element.webkitRequestFullscreen) { // Chrome, Safari
+    element.webkitRequestFullscreen();
+} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
+    element.msRequestFullscreen();
+}
+
+}
+
 };
