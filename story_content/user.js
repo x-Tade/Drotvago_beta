@@ -33,6 +33,28 @@ window.Script2 = function()
   var player = GetPlayer();
 player.SetVar("teszt", "Hello, világ!");
 console.log(player.GetVar("teszt"));  // Ellenőrzés a konzolban
+
+function logMessage(msg) {
+    var logDiv = document.getElementById("debugLog");
+    if (!logDiv) {
+        logDiv = document.createElement("div");
+        logDiv.id = "debugLog";
+        logDiv.style.position = "fixed";
+        logDiv.style.bottom = "10px";
+        logDiv.style.left = "10px";
+        logDiv.style.backgroundColor = "white";
+        logDiv.style.color = "black";
+        logDiv.style.padding = "5px";
+        logDiv.style.border = "1px solid black";
+        logDiv.style.zIndex = "9999";
+        document.body.appendChild(logDiv);
+    }
+    logDiv.innerHTML += msg + "<br>";
+}
+
+// Használat:
+logMessage("Gomb értéke: " + buttonValue);
+
 }
 
 window.Script3 = function()
@@ -55,6 +77,27 @@ if (buttonValue) {
     player.SetVar("telepules", buttonValue);
 }
 
+function logMessage(msg) {
+    var logDiv = document.getElementById("debugLog");
+    if (!logDiv) {
+        logDiv = document.createElement("div");
+        logDiv.id = "debugLog";
+        logDiv.style.position = "fixed";
+        logDiv.style.bottom = "10px";
+        logDiv.style.left = "10px";
+        logDiv.style.backgroundColor = "white";
+        logDiv.style.color = "black";
+        logDiv.style.padding = "5px";
+        logDiv.style.border = "1px solid black";
+        logDiv.style.zIndex = "9999";
+        document.body.appendChild(logDiv);
+    }
+    logDiv.innerHTML += msg + "<br>";
+}
+
+// Használat:
+logMessage("Gomb értéke: " + buttonValue);
+
 }
 
 window.Script4 = function()
@@ -76,6 +119,27 @@ var buttonValue = button.getAttribute("data-acc-text");
 if (buttonValue) {
     player.SetVar("letesitmeny", currentText + buttonValue);
 }
+
+function logMessage(msg) {
+    var logDiv = document.getElementById("debugLog");
+    if (!logDiv) {
+        logDiv = document.createElement("div");
+        logDiv.id = "debugLog";
+        logDiv.style.position = "fixed";
+        logDiv.style.bottom = "10px";
+        logDiv.style.left = "10px";
+        logDiv.style.backgroundColor = "white";
+        logDiv.style.color = "black";
+        logDiv.style.padding = "5px";
+        logDiv.style.border = "1px solid black";
+        logDiv.style.zIndex = "9999";
+        document.body.appendChild(logDiv);
+    }
+    logDiv.innerHTML += msg + "<br>";
+}
+
+// Használat:
+logMessage("Gomb értéke: " + buttonValue);
 
 }
 
