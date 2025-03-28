@@ -58,377 +58,516 @@ if (element.requestFullscreen) {
 
 window.Script4 = function()
 {
-  var element = document.documentElement;
-if (element.requestFullscreen) {
-    element.requestFullscreen();
-} else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-} else if (element.webkitRequestFullscreen) { // Chrome, Safari
-    element.webkitRequestFullscreen();
-} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
-    element.msRequestFullscreen();
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
 }
 
 }
 
 window.Script5 = function()
 {
-  var player = GetPlayer();
-var text = player.GetVar("belepes");
-player.SetVar("belepes", text.slice(0, -1));
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
 }
 
 window.Script6 = function()
 {
-  var player = GetPlayer();
-var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "1");
+  var player = window.GetPlayer(); // Biztosítjuk, hogy a Storyline környezetből hívjuk meg
+
+if (player) {
+    var variables = Object.keys(player.GetVarNames ? player.GetVarNames() : {});
+    var output = "Storyline változók:\n\n";
+
+    variables.forEach(function(variable) {
+        output += variable + " = " + player.GetVar(variable) + "\n";
+    });
+
+    console.log(output);
+    alert(output);
+} else {
+    console.error("Storyline környezet nem érhető el!");
+}
+
 }
 
 window.Script7 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "2");
+var text = player.GetVar("belepes");
+player.SetVar("belepes", text.slice(0, -1));
 }
 
 window.Script8 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "3");
+player.SetVar("belepes", currentText + "1");
 }
 
 window.Script9 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "4");
+player.SetVar("belepes", currentText + "2");
 }
 
 window.Script10 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "5");
+player.SetVar("belepes", currentText + "3");
 }
 
 window.Script11 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "6");
+player.SetVar("belepes", currentText + "4");
 }
 
 window.Script12 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "7");
+player.SetVar("belepes", currentText + "5");
 }
 
 window.Script13 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "8");
+player.SetVar("belepes", currentText + "6");
 }
 
 window.Script14 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "9");
+player.SetVar("belepes", currentText + "7");
 }
 
 window.Script15 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("belepes"); 
-player.SetVar("belepes", currentText + "0");
+player.SetVar("belepes", currentText + "8");
 }
 
 window.Script16 = function()
 {
-  var element = document.documentElement;
-if (element.requestFullscreen) {
-    element.requestFullscreen();
-} else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-} else if (element.webkitRequestFullscreen) { // Chrome, Safari
-    element.webkitRequestFullscreen();
-} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
-    element.msRequestFullscreen();
-}
-
+  var player = GetPlayer();
+var currentText = player.GetVar("belepes"); 
+player.SetVar("belepes", currentText + "9");
 }
 
 window.Script17 = function()
 {
-  var element = document.documentElement;
-if (element.requestFullscreen) {
-    element.requestFullscreen();
-} else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-} else if (element.webkitRequestFullscreen) { // Chrome, Safari
-    element.webkitRequestFullscreen();
-} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
-    element.msRequestFullscreen();
-}
-
+  var player = GetPlayer();
+var currentText = player.GetVar("belepes"); 
+player.SetVar("belepes", currentText + "0");
 }
 
 window.Script18 = function()
 {
-  var element = document.documentElement;
-if (element.requestFullscreen) {
-    element.requestFullscreen();
-} else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-} else if (element.webkitRequestFullscreen) { // Chrome, Safari
-    element.webkitRequestFullscreen();
-} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
-    element.msRequestFullscreen();
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
 }
 
 }
 
 window.Script19 = function()
 {
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script20 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script21 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script22 = function()
+{
+  var player = window.GetPlayer(); // Biztosítjuk, hogy a Storyline környezetből hívjuk meg
+
+if (player) {
+    var variables = Object.keys(player.GetVarNames ? player.GetVarNames() : {});
+    var output = "Storyline változók:\n\n";
+
+    variables.forEach(function(variable) {
+        output += variable + " = " + player.GetVar(variable) + "\n";
+    });
+
+    console.log(output);
+    alert(output);
+} else {
+    console.error("Storyline környezet nem érhető el!");
+}
+
+}
+
+window.Script23 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script24 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script25 = function()
+{
+  var player = window.GetPlayer(); // Biztosítjuk, hogy a Storyline környezetből hívjuk meg
+
+if (player) {
+    var variables = Object.keys(player.GetVarNames ? player.GetVarNames() : {});
+    var output = "Storyline változók:\n\n";
+
+    variables.forEach(function(variable) {
+        output += variable + " = " + player.GetVar(variable) + "\n";
+    });
+
+    console.log(output);
+    alert(output);
+} else {
+    console.error("Storyline környezet nem érhető el!");
+}
+
+}
+
+window.Script26 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script27 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script28 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script29 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script30 = function()
+{
+  var player = window.GetPlayer(); // Biztosítjuk, hogy a Storyline környezetből hívjuk meg
+
+if (player) {
+    var variables = Object.keys(player.GetVarNames ? player.GetVarNames() : {});
+    var output = "Storyline változók:\n\n";
+
+    variables.forEach(function(variable) {
+        output += variable + " = " + player.GetVar(variable) + "\n";
+    });
+
+    console.log(output);
+    alert(output);
+} else {
+    console.error("Storyline környezet nem érhető el!");
+}
+
+}
+
+window.Script31 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script32 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script33 = function()
+{
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "1");
 }
 
-window.Script20 = function()
+window.Script34 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "2");
 }
 
-window.Script21 = function()
+window.Script35 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "3");
 }
 
-window.Script22 = function()
+window.Script36 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "4");
 }
 
-window.Script23 = function()
+window.Script37 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "5");
 }
 
-window.Script24 = function()
+window.Script38 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "6");
 }
 
-window.Script25 = function()
+window.Script39 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "7");
 }
 
-window.Script26 = function()
+window.Script40 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "8");
 }
 
-window.Script27 = function()
+window.Script41 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "9");
 }
 
-window.Script28 = function()
+window.Script42 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "0");
-}
-
-window.Script29 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script30 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script31 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script32 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script33 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script34 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script35 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script36 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script37 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script38 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script39 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script40 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script41 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script42 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
 }
 
 window.Script43 = function()
@@ -590,9 +729,13 @@ if (buttonValue) {
 window.Script56 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny"); 
-player.SetVar("letesitmeny", currentText + " ");
+var currentText = player.GetVar("letesitmeny");
 
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script57 = function()
@@ -694,239 +837,235 @@ if (buttonValue) {
 window.Script65 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "1");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script66 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "2");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script67 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "3");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script68 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "4");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script69 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "5");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script70 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "6");
+var currentText = player.GetVar("letesitmeny"); 
+player.SetVar("letesitmeny", currentText + " ");
+
 }
 
 window.Script71 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "7");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script72 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "8");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script73 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "9");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script74 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "0");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script75 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
+var currentText = player.GetVar("letesitmeny");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
+    player.SetVar("letesitmeny", currentText + buttonValue);
 }
 }
 
 window.Script76 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
+var currentText = player.GetVar("letesitmeny");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
+    player.SetVar("letesitmeny", currentText + buttonValue);
 }
 }
 
 window.Script77 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
+var currentText = player.GetVar("letesitmeny");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
+    player.SetVar("letesitmeny", currentText + buttonValue);
 }
 }
 
 window.Script78 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
+var currentText = player.GetVar("letesitmeny");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
+    player.SetVar("letesitmeny", currentText + buttonValue);
 }
 }
 
 window.Script79 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "1");
 }
 
 window.Script80 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "2");
 }
 
 window.Script81 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "3");
 }
 
 window.Script82 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "4");
 }
 
 window.Script83 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "5");
 }
 
 window.Script84 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "6");
 }
 
 window.Script85 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "7");
 }
 
 window.Script86 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "8");
 }
 
 window.Script87 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "9");
 }
 
 window.Script88 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "0");
 }
 
 window.Script89 = function()
@@ -1100,138 +1239,174 @@ if (buttonValue) {
 window.Script103 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script104 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script105 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script106 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script107 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script108 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script109 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script110 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script111 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script112 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script113 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script114 = function()
 {
   var player = GetPlayer();
+var currentText = player.GetVar("kozterulet");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("kozterulet", buttonValue);
+}
+}
+
+window.Script115 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kozterulet");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("kozterulet", buttonValue);
+}
+}
+
+window.Script116 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kozterulet");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("kozterulet", buttonValue);
+}
+}
+
+window.Script117 = function()
+{
+  var player = GetPlayer();
 var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
@@ -1241,176 +1416,150 @@ if (buttonValue) {
 }
 }
 
-window.Script115 = function()
-{
-  var player = GetPlayer();
-var text = player.GetVar("hazszam");
-player.SetVar("hazszam", text.slice(0, -1));
-}
-
-window.Script116 = function()
-{
-  var player = GetPlayer();
-var text = player.GetVar("letesitmeny");
-player.SetVar("letesitmeny", text.slice(0, -1));
-}
-
-window.Script117 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("vezeteknev");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("vezeteknev", currentText + buttonValue);
-}
-}
-
 window.Script118 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("keresztnev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("keresztnev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script119 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("vezeteknev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("vezeteknev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script120 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("keresztnev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("keresztnev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script121 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("vezeteknev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("vezeteknev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script122 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("keresztnev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("keresztnev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script123 = function()
 {
   var player = GetPlayer();
-var text = player.GetVar("vezeteknev");
-player.SetVar("vezeteknev", text.slice(0, -1));
+var currentText = player.GetVar("telepules");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
 }
 
 window.Script124 = function()
 {
   var player = GetPlayer();
-var text = player.GetVar("keresztnev");
-player.SetVar("keresztnev", text.slice(0, -1));
+var currentText = player.GetVar("telepules");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
 }
 
 window.Script125 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("vezeteknev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("vezeteknev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script126 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("keresztnev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("keresztnev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script127 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("vezeteknev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("vezeteknev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script128 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("keresztnev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("keresztnev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script129 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("vezeteknev");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("vezeteknev", currentText + buttonValue);
-}
+var text = player.GetVar("hazszam");
+player.SetVar("hazszam", text.slice(0, -1));
 }
 
 window.Script130 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("keresztnev");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("keresztnev", currentText + buttonValue);
-}
+var text = player.GetVar("letesitmeny");
+player.SetVar("letesitmeny", text.slice(0, -1));
 }
 
 window.Script131 = function()
@@ -1488,25 +1637,15 @@ if (buttonValue) {
 window.Script137 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("vezeteknev");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("vezeteknev", currentText + buttonValue);
-}
+var text = player.GetVar("vezeteknev");
+player.SetVar("vezeteknev", text.slice(0, -1));
 }
 
 window.Script138 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("keresztnev");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("keresztnev", currentText + buttonValue);
-}
+var text = player.GetVar("keresztnev");
+player.SetVar("keresztnev", text.slice(0, -1));
 }
 
 window.Script139 = function()
@@ -2111,419 +2250,1114 @@ if (buttonValue) {
 
 window.Script189 = function()
 {
-  var element = document.documentElement;
-if (element.requestFullscreen) {
-    element.requestFullscreen();
-} else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-} else if (element.webkitRequestFullscreen) { // Chrome, Safari
-    element.webkitRequestFullscreen();
-} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
-    element.msRequestFullscreen();
-}
+  var player = GetPlayer();
+var currentText = player.GetVar("vezeteknev");
 
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("vezeteknev", currentText + buttonValue);
+}
 }
 
 window.Script190 = function()
 {
-  var element = document.documentElement;
-if (element.requestFullscreen) {
-    element.requestFullscreen();
-} else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-} else if (element.webkitRequestFullscreen) { // Chrome, Safari
-    element.webkitRequestFullscreen();
-} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
-    element.msRequestFullscreen();
-}
+  var player = GetPlayer();
+var currentText = player.GetVar("keresztnev");
 
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("keresztnev", currentText + buttonValue);
+}
 }
 
 window.Script191 = function()
 {
-  var element = document.documentElement;
-if (element.requestFullscreen) {
-    element.requestFullscreen();
-} else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-} else if (element.webkitRequestFullscreen) { // Chrome, Safari
-    element.webkitRequestFullscreen();
-} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
-    element.msRequestFullscreen();
-}
+  var player = GetPlayer();
+var currentText = player.GetVar("vezeteknev");
 
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("vezeteknev", currentText + buttonValue);
+}
 }
 
 window.Script192 = function()
 {
   var player = GetPlayer();
-var text = player.GetVar("szinvalto");
-player.SetVar("szinvalto", text.slice(0, -1));
+var currentText = player.GetVar("keresztnev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("keresztnev", currentText + buttonValue);
+}
 }
 
 window.Script193 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("szinvalto"); 
-player.SetVar("szinvalto", currentText + "🟡");
+var currentText = player.GetVar("vezeteknev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("vezeteknev", currentText + buttonValue);
+}
 }
 
 window.Script194 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("szinvalto"); 
-player.SetVar("szinvalto", currentText + "🔴");
+var currentText = player.GetVar("keresztnev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("keresztnev", currentText + buttonValue);
+}
 }
 
 window.Script195 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("szinvalto"); 
-player.SetVar("szinvalto", currentText + "⚪");
+var currentText = player.GetVar("vezeteknev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("vezeteknev", currentText + buttonValue);
+}
 }
 
 window.Script196 = function()
 {
-  var element = document.documentElement;
-if (element.requestFullscreen) {
-    element.requestFullscreen();
-} else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-} else if (element.webkitRequestFullscreen) { // Chrome, Safari
-    element.webkitRequestFullscreen();
-} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
-    element.msRequestFullscreen();
-}
+  var player = GetPlayer();
+var currentText = player.GetVar("keresztnev");
 
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("keresztnev", currentText + buttonValue);
+}
 }
 
 window.Script197 = function()
 {
   var player = GetPlayer();
-var betu = player.GetVar("runa1");
+var currentText = player.GetVar("vezeteknev");
 
-var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
-var index = runak.indexOf(betu);
-index = (index + 1) % runak.length;
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
-player.SetVar("runa1", runak[index]);
-
+if (buttonValue) {
+    player.SetVar("vezeteknev", currentText + buttonValue);
+}
 }
 
 window.Script198 = function()
 {
   var player = GetPlayer();
-var betu = player.GetVar("runa1");
+var currentText = player.GetVar("keresztnev");
 
-var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
-var index = runak.indexOf(betu);
-index = (index - 1 + runak.length) % runak.length;
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
-player.SetVar("runa1", runak[index]);
-
+if (buttonValue) {
+    player.SetVar("keresztnev", currentText + buttonValue);
+}
 }
 
 window.Script199 = function()
 {
   var player = GetPlayer();
-var betu = player.GetVar("runa2");
+var currentText = player.GetVar("vezeteknev");
 
-var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
-var index = runak.indexOf(betu);
-index = (index + 1) % runak.length;
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
-player.SetVar("runa2", runak[index]);
-
+if (buttonValue) {
+    player.SetVar("vezeteknev", currentText + buttonValue);
+}
 }
 
 window.Script200 = function()
 {
   var player = GetPlayer();
-var betu = player.GetVar("runa3");
+var currentText = player.GetVar("keresztnev");
 
-var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
-var index = runak.indexOf(betu);
-index = (index + 1) % runak.length;
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
-player.SetVar("runa3", runak[index]);
-
+if (buttonValue) {
+    player.SetVar("keresztnev", currentText + buttonValue);
+}
 }
 
 window.Script201 = function()
 {
   var player = GetPlayer();
-var betu = player.GetVar("runa4");
+var currentText = player.GetVar("vezeteknev");
 
-var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
-var index = runak.indexOf(betu);
-index = (index + 1) % runak.length;
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
-player.SetVar("runa4", runak[index]);
-
+if (buttonValue) {
+    player.SetVar("vezeteknev", currentText + buttonValue);
+}
 }
 
 window.Script202 = function()
 {
   var player = GetPlayer();
-var betu = player.GetVar("runa2");
+var currentText = player.GetVar("keresztnev");
 
-var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
-var index = runak.indexOf(betu);
-index = (index - 1 + runak.length) % runak.length;
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
-player.SetVar("runa2", runak[index]);
-
+if (buttonValue) {
+    player.SetVar("keresztnev", currentText + buttonValue);
+}
 }
 
 window.Script203 = function()
 {
-  var player = GetPlayer();
-var betu = player.GetVar("runa3");
+  function enterFullscreen() {
+    var element = document.documentElement;
 
-var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
-var index = runak.indexOf(betu);
-index = (index - 1 + runak.length) % runak.length;
-
-player.SetVar("runa3", runak[index]);
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
 
 }
 
 window.Script204 = function()
 {
-  var player = GetPlayer();
-var betu = player.GetVar("runa4");
-
-var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
-var index = runak.indexOf(betu);
-index = (index - 1 + runak.length) % runak.length;
-
-player.SetVar("runa4", runak[index]);
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
 
 }
 
 window.Script205 = function()
 {
-  var player = GetPlayer();
-var betu = player.GetVar("betu1");
+  var player = window.GetPlayer(); // Biztosítjuk, hogy a Storyline környezetből hívjuk meg
 
-var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
-var index = abc.indexOf(betu);
-index = (index + 1) % abc.length;
+if (player) {
+    var variables = Object.keys(player.GetVarNames ? player.GetVarNames() : {});
+    var output = "Storyline változók:\n\n";
 
-player.SetVar("betu1", abc[index]);
+    variables.forEach(function(variable) {
+        output += variable + " = " + player.GetVar(variable) + "\n";
+    });
+
+    console.log(output);
+    alert(output);
+} else {
+    console.error("Storyline környezet nem érhető el!");
+}
+
 }
 
 window.Script206 = function()
 {
-  var player = GetPlayer();
-var betu = player.GetVar("betu1");
+  function enterFullscreen() {
+    var element = document.documentElement;
 
-var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
-var index = abc.indexOf(betu);
-index = (index - 1 + abc.length) % abc.length;
-
-player.SetVar("betu1", abc[index]);
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
 
 }
 
 window.Script207 = function()
 {
-  var player = GetPlayer();
-var betu = player.GetVar("betu2");
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
 
-var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
-var index = abc.indexOf(betu);
-index = (index + 1) % abc.length;
-
-player.SetVar("betu2", abc[index]);
 }
 
 window.Script208 = function()
 {
-  var player = GetPlayer();
-var betu = player.GetVar("betu3");
+  var player = window.GetPlayer(); // Biztosítjuk, hogy a Storyline környezetből hívjuk meg
 
-var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
-var index = abc.indexOf(betu);
-index = (index + 1) % abc.length;
+if (player) {
+    var variables = Object.keys(player.GetVarNames ? player.GetVarNames() : {});
+    var output = "Storyline változók:\n\n";
 
-player.SetVar("betu3", abc[index]);
+    variables.forEach(function(variable) {
+        output += variable + " = " + player.GetVar(variable) + "\n";
+    });
+
+    console.log(output);
+    alert(output);
+} else {
+    console.error("Storyline környezet nem érhető el!");
+}
+
 }
 
 window.Script209 = function()
 {
-  var player = GetPlayer();
-var betu = player.GetVar("betu4");
+  function enterFullscreen() {
+    var element = document.documentElement;
 
-var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
-var index = abc.indexOf(betu);
-index = (index + 1) % abc.length;
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
 
-player.SetVar("betu4", abc[index]);
 }
 
 window.Script210 = function()
 {
-  var player = GetPlayer();
-var betu = player.GetVar("betu2");
-
-var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
-var index = abc.indexOf(betu);
-index = (index - 1 + abc.length) % abc.length;
-
-player.SetVar("betu2", abc[index]);
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
 
 }
 
 window.Script211 = function()
 {
-  var player = GetPlayer();
-var betu = player.GetVar("betu3");
+  var player = window.GetPlayer(); // Biztosítjuk, hogy a Storyline környezetből hívjuk meg
 
-var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
-var index = abc.indexOf(betu);
-index = (index - 1 + abc.length) % abc.length;
+if (player) {
+    var variables = Object.keys(player.GetVarNames ? player.GetVarNames() : {});
+    var output = "Storyline változók:\n\n";
 
-player.SetVar("betu3", abc[index]);
+    variables.forEach(function(variable) {
+        output += variable + " = " + player.GetVar(variable) + "\n";
+    });
+
+    console.log(output);
+    alert(output);
+} else {
+    console.error("Storyline környezet nem érhető el!");
+}
 
 }
 
 window.Script212 = function()
 {
-  var player = GetPlayer();
-var betu = player.GetVar("betu4");
+  function enterFullscreen() {
+    var element = document.documentElement;
 
-var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
-var index = abc.indexOf(betu);
-index = (index - 1 + abc.length) % abc.length;
-
-player.SetVar("betu4", abc[index]);
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
 
 }
 
 window.Script213 = function()
 {
-  var element = document.documentElement;
-if (element.requestFullscreen) {
-    element.requestFullscreen();
-} else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-} else if (element.webkitRequestFullscreen) { // Chrome, Safari
-    element.webkitRequestFullscreen();
-} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
-    element.msRequestFullscreen();
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
 }
 
 }
 
 window.Script214 = function()
 {
-  var element = document.documentElement;
-if (element.requestFullscreen) {
-    element.requestFullscreen();
-} else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-} else if (element.webkitRequestFullscreen) { // Chrome, Safari
-    element.webkitRequestFullscreen();
-} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
-    element.msRequestFullscreen();
-}
-
+  var player = GetPlayer();
+var text = player.GetVar("szinvalto");
+player.SetVar("szinvalto", text.slice(0, -1));
 }
 
 window.Script215 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("szinvalto"); 
+player.SetVar("szinvalto", currentText + "🟡");
+}
+
+window.Script216 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("szinvalto"); 
+player.SetVar("szinvalto", currentText + "🔴");
+}
+
+window.Script217 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("szinvalto"); 
+player.SetVar("szinvalto", currentText + "⚪");
+}
+
+window.Script218 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script219 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script220 = function()
+{
+  var player = window.GetPlayer(); // Biztosítjuk, hogy a Storyline környezetből hívjuk meg
+
+if (player) {
+    var variables = Object.keys(player.GetVarNames ? player.GetVarNames() : {});
+    var output = "Storyline változók:\n\n";
+
+    variables.forEach(function(variable) {
+        output += variable + " = " + player.GetVar(variable) + "\n";
+    });
+
+    console.log(output);
+    alert(output);
+} else {
+    console.error("Storyline környezet nem érhető el!");
+}
+
+}
+
+window.Script221 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script222 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script223 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa1");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index + 1) % runak.length;
+
+player.SetVar("runa1", runak[index]);
+
+}
+
+window.Script224 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa1");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index - 1 + runak.length) % runak.length;
+
+player.SetVar("runa1", runak[index]);
+
+}
+
+window.Script225 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa2");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index + 1) % runak.length;
+
+player.SetVar("runa2", runak[index]);
+
+}
+
+window.Script226 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa3");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index + 1) % runak.length;
+
+player.SetVar("runa3", runak[index]);
+
+}
+
+window.Script227 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa4");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index + 1) % runak.length;
+
+player.SetVar("runa4", runak[index]);
+
+}
+
+window.Script228 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa2");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index - 1 + runak.length) % runak.length;
+
+player.SetVar("runa2", runak[index]);
+
+}
+
+window.Script229 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa3");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index - 1 + runak.length) % runak.length;
+
+player.SetVar("runa3", runak[index]);
+
+}
+
+window.Script230 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa4");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index - 1 + runak.length) % runak.length;
+
+player.SetVar("runa4", runak[index]);
+
+}
+
+window.Script231 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu1");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index + 1) % abc.length;
+
+player.SetVar("betu1", abc[index]);
+}
+
+window.Script232 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu1");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index - 1 + abc.length) % abc.length;
+
+player.SetVar("betu1", abc[index]);
+
+}
+
+window.Script233 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu2");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index + 1) % abc.length;
+
+player.SetVar("betu2", abc[index]);
+}
+
+window.Script234 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu3");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index + 1) % abc.length;
+
+player.SetVar("betu3", abc[index]);
+}
+
+window.Script235 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu4");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index + 1) % abc.length;
+
+player.SetVar("betu4", abc[index]);
+}
+
+window.Script236 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu2");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index - 1 + abc.length) % abc.length;
+
+player.SetVar("betu2", abc[index]);
+
+}
+
+window.Script237 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu3");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index - 1 + abc.length) % abc.length;
+
+player.SetVar("betu3", abc[index]);
+
+}
+
+window.Script238 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu4");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index - 1 + abc.length) % abc.length;
+
+player.SetVar("betu4", abc[index]);
+
+}
+
+window.Script239 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script240 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script241 = function()
+{
+  var player = window.GetPlayer(); // Biztosítjuk, hogy a Storyline környezetből hívjuk meg
+
+if (player) {
+    var variables = Object.keys(player.GetVarNames ? player.GetVarNames() : {});
+    var output = "Storyline változók:\n\n";
+
+    variables.forEach(function(variable) {
+        output += variable + " = " + player.GetVar(variable) + "\n";
+    });
+
+    console.log(output);
+    alert(output);
+} else {
+    console.error("Storyline környezet nem érhető el!");
+}
+
+}
+
+window.Script242 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script243 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script244 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script245 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script246 = function()
+{
+  var player = window.GetPlayer(); // Biztosítjuk, hogy a Storyline környezetből hívjuk meg
+
+if (player) {
+    var variables = Object.keys(player.GetVarNames ? player.GetVarNames() : {});
+    var output = "Storyline változók:\n\n";
+
+    variables.forEach(function(variable) {
+        output += variable + " = " + player.GetVar(variable) + "\n";
+    });
+
+    console.log(output);
+    alert(output);
+} else {
+    console.error("Storyline környezet nem érhető el!");
+}
+
+}
+
+window.Script247 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script248 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script249 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "1");
 }
 
-window.Script216 = function()
+window.Script250 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "2");
 }
 
-window.Script217 = function()
+window.Script251 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "3");
 }
 
-window.Script218 = function()
+window.Script252 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "4");
 }
 
-window.Script219 = function()
+window.Script253 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "5");
 }
 
-window.Script220 = function()
+window.Script254 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "6");
 }
 
-window.Script221 = function()
+window.Script255 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "7");
 }
 
-window.Script222 = function()
+window.Script256 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "8");
 }
 
-window.Script223 = function()
+window.Script257 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "9");
 }
 
-window.Script224 = function()
+window.Script258 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "0");
 }
 
-window.Script225 = function()
+window.Script259 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "C");
 }
 
-window.Script226 = function()
+window.Script260 = function()
 {
-  var element = document.documentElement;
-if (element.requestFullscreen) {
-    element.requestFullscreen();
-} else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-} else if (element.webkitRequestFullscreen) { // Chrome, Safari
-    element.webkitRequestFullscreen();
-} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
-    element.msRequestFullscreen();
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
 }
 
 }
 
-window.Script227 = function()
+window.Script261 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script262 = function()
+{
+  var player = window.GetPlayer(); // Biztosítjuk, hogy a Storyline környezetből hívjuk meg
+
+if (player) {
+    var variables = Object.keys(player.GetVarNames ? player.GetVarNames() : {});
+    var output = "Storyline változók:\n\n";
+
+    variables.forEach(function(variable) {
+        output += variable + " = " + player.GetVar(variable) + "\n";
+    });
+
+    console.log(output);
+    alert(output);
+} else {
+    console.error("Storyline környezet nem érhető el!");
+}
+
+}
+
+window.Script263 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script264 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script265 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -2534,7 +3368,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script228 = function()
+window.Script266 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -2545,7 +3379,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script229 = function()
+window.Script267 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -2556,7 +3390,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script230 = function()
+window.Script268 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -2567,7 +3401,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script231 = function()
+window.Script269 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -2578,7 +3412,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script232 = function()
+window.Script270 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -2589,7 +3423,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script233 = function()
+window.Script271 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -2600,7 +3434,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script234 = function()
+window.Script272 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -2611,7 +3445,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script235 = function()
+window.Script273 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -2622,7 +3456,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script236 = function()
+window.Script274 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -2633,29 +3467,116 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script237 = function()
+window.Script275 = function()
 {
   var player = GetPlayer();
 var text = player.GetVar("szekreny1");
 player.SetVar("szekreny1", text.slice(0, -1));
 }
 
-window.Script238 = function()
+window.Script276 = function()
 {
-  var element = document.documentElement;
-if (element.requestFullscreen) {
-    element.requestFullscreen();
-} else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-} else if (element.webkitRequestFullscreen) { // Chrome, Safari
-    element.webkitRequestFullscreen();
-} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
-    element.msRequestFullscreen();
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
 }
 
 }
 
-window.Script239 = function()
+window.Script277 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script278 = function()
+{
+  var player = window.GetPlayer(); // Biztosítjuk, hogy a Storyline környezetből hívjuk meg
+
+if (player) {
+    var variables = Object.keys(player.GetVarNames ? player.GetVarNames() : {});
+    var output = "Storyline változók:\n\n";
+
+    variables.forEach(function(variable) {
+        output += variable + " = " + player.GetVar(variable) + "\n";
+    });
+
+    console.log(output);
+    alert(output);
+} else {
+    console.error("Storyline környezet nem érhető el!");
+}
+
+}
+
+window.Script279 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script280 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script281 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("koordinata");
@@ -2668,7 +3589,7 @@ if (buttonValue && currentText.length === 1) {
 
 }
 
-window.Script240 = function()
+window.Script282 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("koordinata");
@@ -2681,7 +3602,7 @@ if (buttonValue && currentText.length === 0) {
 
 }
 
-window.Script241 = function()
+window.Script283 = function()
 {
   var player = GetPlayer();
 var text = player.GetVar("koordinata");
@@ -2694,7 +3615,7 @@ if (text.length === 3) {
 
 }
 
-window.Script242 = function()
+window.Script284 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -2705,7 +3626,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script243 = function()
+window.Script285 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -2716,7 +3637,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script244 = function()
+window.Script286 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -2727,7 +3648,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script245 = function()
+window.Script287 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -2738,7 +3659,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script246 = function()
+window.Script288 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -2749,7 +3670,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script247 = function()
+window.Script289 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -2760,7 +3681,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script248 = function()
+window.Script290 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -2771,7 +3692,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script249 = function()
+window.Script291 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -2782,7 +3703,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script250 = function()
+window.Script292 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -2793,7 +3714,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script251 = function()
+window.Script293 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -2804,29 +3725,116 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script252 = function()
+window.Script294 = function()
 {
   var player = GetPlayer();
 var text = player.GetVar("raktar");
 player.SetVar("raktar", text.slice(0, -1));
 }
 
-window.Script253 = function()
+window.Script295 = function()
 {
-  var element = document.documentElement;
-if (element.requestFullscreen) {
-    element.requestFullscreen();
-} else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-} else if (element.webkitRequestFullscreen) { // Chrome, Safari
-    element.webkitRequestFullscreen();
-} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
-    element.msRequestFullscreen();
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
 }
 
 }
 
-window.Script254 = function()
+window.Script296 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script297 = function()
+{
+  var player = window.GetPlayer(); // Biztosítjuk, hogy a Storyline környezetből hívjuk meg
+
+if (player) {
+    var variables = Object.keys(player.GetVarNames ? player.GetVarNames() : {});
+    var output = "Storyline változók:\n\n";
+
+    variables.forEach(function(variable) {
+        output += variable + " = " + player.GetVar(variable) + "\n";
+    });
+
+    console.log(output);
+    alert(output);
+} else {
+    console.error("Storyline környezet nem érhető el!");
+}
+
+}
+
+window.Script298 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script299 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script300 = function()
 {
   var player = GetPlayer();
 var betu = player.GetVar("szam1");
@@ -2838,7 +3846,7 @@ index = (index + 1) % abc.length;
 player.SetVar("szam1", abc[index]);
 }
 
-window.Script255 = function()
+window.Script301 = function()
 {
   var player = GetPlayer();
 var betu = player.GetVar("szam2");
@@ -2850,7 +3858,7 @@ index = (index + 1) % abc.length;
 player.SetVar("szam2", abc[index]);
 }
 
-window.Script256 = function()
+window.Script302 = function()
 {
   var player = GetPlayer();
 var betu = player.GetVar("szam3");
@@ -2862,7 +3870,7 @@ index = (index + 1) % abc.length;
 player.SetVar("szam3", abc[index]);
 }
 
-window.Script257 = function()
+window.Script303 = function()
 {
   var player = GetPlayer();
 var betu = player.GetVar("szam4");
@@ -2874,7 +3882,7 @@ index = (index + 1) % abc.length;
 player.SetVar("szam4", abc[index]);
 }
 
-window.Script258 = function()
+window.Script304 = function()
 {
   var player = GetPlayer();
 var betu = player.GetVar("szam1");
@@ -2886,7 +3894,7 @@ index = (index - 1) % abc.length;
 player.SetVar("szam1", abc[index]);
 }
 
-window.Script259 = function()
+window.Script305 = function()
 {
   var player = GetPlayer();
 var betu = player.GetVar("szam2");
@@ -2898,7 +3906,7 @@ index = (index - 1) % abc.length;
 player.SetVar("szam2", abc[index]);
 }
 
-window.Script260 = function()
+window.Script306 = function()
 {
   var player = GetPlayer();
 var betu = player.GetVar("szam3");
@@ -2910,7 +3918,7 @@ index = (index - 1) % abc.length;
 player.SetVar("szam3", abc[index]);
 }
 
-window.Script261 = function()
+window.Script307 = function()
 {
   var player = GetPlayer();
 var betu = player.GetVar("szam4");
@@ -2922,22 +3930,68 @@ index = (index - 1) % abc.length;
 player.SetVar("szam4", abc[index]);
 }
 
-window.Script262 = function()
+window.Script308 = function()
 {
-  var element = document.documentElement;
-if (element.requestFullscreen) {
-    element.requestFullscreen();
-} else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-} else if (element.webkitRequestFullscreen) { // Chrome, Safari
-    element.webkitRequestFullscreen();
-} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
-    element.msRequestFullscreen();
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
 }
 
 }
 
-window.Script263 = function()
+window.Script309 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script310 = function()
+{
+  var player = window.GetPlayer(); // Biztosítjuk, hogy a Storyline környezetből hívjuk meg
+
+if (player) {
+    var variables = Object.keys(player.GetVarNames ? player.GetVarNames() : {});
+    var output = "Storyline változók:\n\n";
+
+    variables.forEach(function(variable) {
+        output += variable + " = " + player.GetVar(variable) + "\n";
+    });
+
+    console.log(output);
+    alert(output);
+} else {
+    console.error("Storyline környezet nem érhető el!");
+}
+
+}
+
+window.Script311 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("utvonal"); 
@@ -2946,7 +4000,7 @@ player.SetVar("utvonal", currentText + "◀ ");
 
 }
 
-window.Script264 = function()
+window.Script312 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("utvonal"); 
@@ -2955,7 +4009,7 @@ player.SetVar("utvonal", currentText + "▲ ");
 
 }
 
-window.Script265 = function()
+window.Script313 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("utvonal"); 
@@ -2964,56 +4018,213 @@ player.SetVar("utvonal", currentText + "▶ ");
 
 }
 
-window.Script266 = function()
+window.Script314 = function()
 {
   var player = GetPlayer();
 var text = player.GetVar("utvonal");
 player.SetVar("utvonal", text.slice(0, -2));
 }
 
-window.Script267 = function()
+window.Script315 = function()
 {
-  var player = GetPlayer();
-var currentText = player.GetVar("utvonal"); 
+  function enterFullscreen() {
+    var element = document.documentElement;
 
-// Ellenőrizzük, hogy a jelenlegi hossz kisebb-e 4-nél
-player.SetVar("utvonal", currentText + "▶");
-
-}
-
-window.Script268 = function()
-{
-  var player = GetPlayer();
-var text = player.GetVar("utvonal");
-player.SetVar("utvonal", text.slice(0, -1));
-}
-
-window.Script269 = function()
-{
-  var element = document.documentElement;
-if (element.requestFullscreen) {
-    element.requestFullscreen();
-} else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-} else if (element.webkitRequestFullscreen) { // Chrome, Safari
-    element.webkitRequestFullscreen();
-} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
-    element.msRequestFullscreen();
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
 }
 
 }
 
-window.Script270 = function()
+window.Script316 = function()
 {
-  var element = document.documentElement;
-if (element.requestFullscreen) {
-    element.requestFullscreen();
-} else if (element.mozRequestFullScreen) { // Firefox
-    element.mozRequestFullScreen();
-} else if (element.webkitRequestFullscreen) { // Chrome, Safari
-    element.webkitRequestFullscreen();
-} else if (element.msRequestFullscreen) { // Internet Explorer / Edge
-    element.msRequestFullscreen();
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script317 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script318 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script319 = function()
+{
+  var player = window.GetPlayer(); // Biztosítjuk, hogy a Storyline környezetből hívjuk meg
+
+if (player) {
+    var variables = Object.keys(player.GetVarNames ? player.GetVarNames() : {});
+    var output = "Storyline változók:\n\n";
+
+    variables.forEach(function(variable) {
+        output += variable + " = " + player.GetVar(variable) + "\n";
+    });
+
+    console.log(output);
+    alert(output);
+} else {
+    console.error("Storyline környezet nem érhető el!");
+}
+
+}
+
+window.Script320 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script321 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script322 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE / Edge
+        element.msRequestFullscreen();
+    } else if (element.webkitEnterFullscreen) { // iPhone Safari (csak videóknál működik)
+        var video = document.querySelector("video");
+        if (video) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("Ez a böngésző nem támogatja a teljes képernyős módot.");
+        }
+    }
+}
+
+}
+
+window.Script323 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script324 = function()
+{
+  var player = window.GetPlayer(); // Biztosítjuk, hogy a Storyline környezetből hívjuk meg
+
+if (player) {
+    var variables = Object.keys(player.GetVarNames ? player.GetVarNames() : {});
+    var output = "Storyline változók:\n\n";
+
+    variables.forEach(function(variable) {
+        output += variable + " = " + player.GetVar(variable) + "\n";
+    });
+
+    console.log(output);
+    alert(output);
+} else {
+    console.error("Storyline környezet nem érhető el!");
 }
 
 }
