@@ -13,7 +13,7 @@
         <options>
           <option name="title_enabled" value="false">
             <options>
-              <option name="title_text" value="Drotvago_beta_v0.22" />
+              <option name="title_text" value="Drotvago_beta_v0.30" />
             </options>
           </option>
           <option name="logo_enabled" value="false">
@@ -1592,6 +1592,7 @@
           <links>
             <slidelink slideid="_player.5ztpbQSeTa2.6eEXsuoaMeO" displaytext="Műhely külső" expand="false" type="slide" />
             <slidelink slideid="_player.5ztpbQSeTa2.5n8vDw7W8ds" displaytext="Mühely belső" expand="false" type="slide" />
+            <slidelink slideid="_player.5ztpbQSeTa2.6dCsJAMYGrC" displaytext="Vége" expand="false" type="slide" />
           </links>
         </slidelink>
         <slidelink slideid="_player.5xIYyB3Eq2W" displaytext="raktár-csatorna" expand="true" type="slide">
