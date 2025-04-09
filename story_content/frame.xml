@@ -13,7 +13,7 @@
         <options>
           <option name="title_enabled" value="false">
             <options>
-              <option name="title_text" value="Drotvago_beta_v0.30" />
+              <option name="title_text" value="Drotvago_beta_v0.40" />
             </options>
           </option>
           <option name="logo_enabled" value="false">
@@ -1601,6 +1601,8 @@
             <slidelink slideid="_player.5xIYyB3Eq2W.6ZVPp9cBWLF" displaytext="csatornakint" expand="false" type="slide" />
             <slidelink slideid="_player.5xIYyB3Eq2W.6S3gJQdF1Kv" displaytext="csatornabent" expand="false" type="slide" />
             <slidelink slideid="_player.5xIYyB3Eq2W.6KaC1NHTA6B" displaytext="Bomba" expand="false" type="slide" />
+            <slidelink slideid="_player.5xIYyB3Eq2W.5YLtPQg6gPW" displaytext="WIN" expand="false" type="slide" />
+            <slidelink slideid="_player.5xIYyB3Eq2W.6IpAZHLq1S0" displaytext="LOSE" expand="false" type="slide" />
           </links>
         </slidelink>
       </links>
