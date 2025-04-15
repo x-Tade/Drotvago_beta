@@ -13,7 +13,7 @@
         <options>
           <option name="title_enabled" value="false">
             <options>
-              <option name="title_text" value="Drotvago_beta_v0.5.0" />
+              <option name="title_text" value="Drotvago_beta_v0.5.1" />
             </options>
           </option>
           <option name="logo_enabled" value="false">
@@ -1592,20 +1592,20 @@
         <slidelink slideid="_player.6qsfIiibzpU" displaytext="2 játékos" expand="true" type="slide">
           <links>
             <slidelink slideid="_player.6qsfIiibzpU.6kxhVjBKEgV" displaytext="2 játékos START" expand="false" type="slide" />
-            <slidelink slideid="_player.6qsfIiibzpU.5lvJHlfTDkl" displaytext="Iroda" expand="false" type="slide" />
-            <slidelink slideid="_player.6qsfIiibzpU.6DkpGqdfn2E" displaytext="Hétvégi ház külső" expand="false" type="slide" />
-            <slidelink slideid="_player.6qsfIiibzpU.6CjtwkzJJYK" displaytext="Hétvégi ház belső" expand="false" type="slide" />
-            <slidelink slideid="_player.6qsfIiibzpU.6iNmNHrulLZ" displaytext="Műhely külső" expand="false" type="slide" />
-            <slidelink slideid="_player.6qsfIiibzpU.6nFVYG05ddZ" displaytext="Mühely belső" expand="false" type="slide" />
-            <slidelink slideid="_player.6qsfIiibzpU.5soCduvPFZY" displaytext="raktár" expand="false" type="slide" />
-            <slidelink slideid="_player.6qsfIiibzpU.5zrp6EgXS3i" displaytext="csatornakint" expand="false" type="slide" />
-            <slidelink slideid="_player.6qsfIiibzpU.6kjFvBZMyYs" displaytext="csatornabent" expand="false" type="slide" />
-            <slidelink slideid="_player.6qsfIiibzpU.5tF12CmqmFs" displaytext="Bomba" expand="false" type="slide" />
-            <slidelink slideid="_player.6qsfIiibzpU.6cAMHLHUZZH" displaytext="WIN" expand="false" type="slide" />
-            <slidelink slideid="_player.6qsfIiibzpU.6PPjUHRFwa8" displaytext="LOSE" expand="false" type="slide" />
-            <slidelink slideid="_player.6qsfIiibzpU.6TQ1hfz9NWF" displaytext="Köztes1" expand="false" type="slide" />
-            <slidelink slideid="_player.6qsfIiibzpU.62P2HzX3TVf" displaytext="Köztes2" expand="false" type="slide" />
             <slidelink slideid="_player.6qsfIiibzpU.6SpXs358d0O" displaytext="Köztes3" expand="false" type="slide" />
+            <slidelink slideid="_player.6qsfIiibzpU.5gy7tqEDtrg" displaytext="Iroda" expand="false" type="slide" />
+            <slidelink slideid="_player.6qsfIiibzpU.5VXHrVPxe8g" displaytext="Hétvégi ház külső" expand="false" type="slide" />
+            <slidelink slideid="_player.6qsfIiibzpU.5kelXoJ3Tgm" displaytext="Hétvégi ház belső" expand="false" type="slide" />
+            <slidelink slideid="_player.6qsfIiibzpU.6X6AKrTPJBT" displaytext="Műhely külső" expand="false" type="slide" />
+            <slidelink slideid="_player.6qsfIiibzpU.66fSNU2JXxl" displaytext="Mühely belső" expand="false" type="slide" />
+            <slidelink slideid="_player.6qsfIiibzpU.6qCtIpllBsk" displaytext="raktár" expand="false" type="slide" />
+            <slidelink slideid="_player.6qsfIiibzpU.6ZZoxdkdpz8" displaytext="csatornakint" expand="false" type="slide" />
+            <slidelink slideid="_player.6qsfIiibzpU.5xkyZ0jZjdh" displaytext="csatornabent" expand="false" type="slide" />
+            <slidelink slideid="_player.6qsfIiibzpU.6XFFP71koF9" displaytext="Bomba" expand="false" type="slide" />
+            <slidelink slideid="_player.6qsfIiibzpU.6eZmwvKkhEi" displaytext="WIN" expand="false" type="slide" />
+            <slidelink slideid="_player.6qsfIiibzpU.6UbdoPnDvKi" displaytext="LOSE" expand="false" type="slide" />
+            <slidelink slideid="_player.6qsfIiibzpU.5YZtPk30rr5" displaytext="Köztes1" expand="false" type="slide" />
+            <slidelink slideid="_player.6qsfIiibzpU.5rlC2iJN8sz" displaytext="Köztes2" expand="false" type="slide" />
           </links>
         </slidelink>
         <slidelink slideid="_player.5rxEXiQC6BO" displaytext="Hétvégi ház" expand="true" type="slide">

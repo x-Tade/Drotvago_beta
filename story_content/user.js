@@ -11475,239 +11475,302 @@ window.Script900 = function()
 window.Script901 = function()
 {
   var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "1");
+} else {
+    player.SetVar("kartya", currentText + "1");
+}
+}
+
+window.Script902 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "2");
+} else {
+    player.SetVar("kartya", currentText + "2");
+}
+}
+
+window.Script903 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "3");
+} else {
+    player.SetVar("kartya", currentText + "3");
+}
+}
+
+window.Script904 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "4");
+} else {
+    player.SetVar("kartya", currentText + "4");
+}
+}
+
+window.Script905 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "5");
+} else {
+    player.SetVar("kartya", currentText + "5");
+}
+}
+
+window.Script906 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "6");
+} else {
+    player.SetVar("kartya", currentText + "6");
+}
+}
+
+window.Script907 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "7");
+} else {
+    player.SetVar("kartya", currentText + "7");
+}
+}
+
+window.Script908 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "8");
+} else {
+    player.SetVar("kartya", currentText + "8");
+}
+}
+
+window.Script909 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "9");
+} else {
+    player.SetVar("kartya", currentText + "9");
+}
+}
+
+window.Script910 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "0");
+} else {
+    player.SetVar("kartya", currentText + "0");
+}
+}
+
+window.Script911 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+    var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (!isIOS) {
+        if (element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) {
+            element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullscreen) {
+            element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) {
+            element.msRequestFullscreen();
+        }
+    } else {
+        // iOS: csak videót lehet fullscreenre rakni
+        var video = document.querySelector("video");
+        if (video && video.webkitEnterFullscreen) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("iOS-en csak videót lehet teljes képernyőre rakni.");
+        }
+    }
+}
+
+enterFullscreen();
+
+}
+
+window.Script912 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script913 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+    var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (!isIOS) {
+        if (element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) {
+            element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullscreen) {
+            element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) {
+            element.msRequestFullscreen();
+        }
+    } else {
+        // Keresünk vagy létrehozunk egy rejtett videót
+        var video = document.getElementById("hiddenFullscreenVideo");
+        if (!video) {
+            video = document.createElement("video");
+            video.id = "hiddenFullscreenVideo";
+            video.src = "data:video/mp4;base64,AAAAIGZ0eXBtcDQyAAAAAG1wNDFtcDQyaXNvbTEyMAAAAG1vb3YAAABsbXZoZAAAAAB8JgB8JgAAAAAAAGQAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAABhzdHRzAAAAAAAAAAEAAAABAAAAAA=="; // 1 képkockás, üres mp4
+            video.setAttribute("playsinline", "true");
+            video.style.position = "absolute";
+            video.style.width = "1px";
+            video.style.height = "1px";
+            video.style.opacity = "0";
+            document.body.appendChild(video);
+        }
+
+        // Fullscreen kérés
+        if (video.webkitEnterFullscreen) {
+            video.play().then(() => {
+                video.webkitEnterFullscreen();
+            }).catch(() => {
+                alert("Nem sikerült fullscreen módba lépni.");
+            });
+        } else {
+            alert("Ez az iOS böngésző nem támogatja a fullscreen módot.");
+        }
+    }
+}
+
+enterFullscreen();
+
+}
+
+window.Script914 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script915 = function()
+{
+  var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "1");
 }
 
-window.Script902 = function()
+window.Script916 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "2");
 }
 
-window.Script903 = function()
+window.Script917 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "3");
 }
 
-window.Script904 = function()
+window.Script918 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "4");
 }
 
-window.Script905 = function()
+window.Script919 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "5");
 }
 
-window.Script906 = function()
+window.Script920 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "6");
 }
 
-window.Script907 = function()
+window.Script921 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "7");
 }
 
-window.Script908 = function()
+window.Script922 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "8");
 }
 
-window.Script909 = function()
+window.Script923 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "9");
 }
 
-window.Script910 = function()
+window.Script924 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "0");
-}
-
-window.Script911 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script912 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script913 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script914 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script915 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script916 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script917 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script918 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script919 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script920 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script921 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script922 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script923 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script924 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
 }
 
 window.Script925 = function()
@@ -11869,9 +11932,13 @@ if (buttonValue) {
 window.Script938 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny"); 
-player.SetVar("letesitmeny", currentText + " ");
+var currentText = player.GetVar("letesitmeny");
 
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script939 = function()
@@ -11973,239 +12040,235 @@ if (buttonValue) {
 window.Script947 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "1");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script948 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "2");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script949 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "3");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script950 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "4");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script951 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "5");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script952 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "6");
+var currentText = player.GetVar("letesitmeny"); 
+player.SetVar("letesitmeny", currentText + " ");
+
 }
 
 window.Script953 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "7");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script954 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "8");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script955 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "9");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script956 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "0");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script957 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
+var currentText = player.GetVar("letesitmeny");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
+    player.SetVar("letesitmeny", currentText + buttonValue);
 }
 }
 
 window.Script958 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
+var currentText = player.GetVar("letesitmeny");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
+    player.SetVar("letesitmeny", currentText + buttonValue);
 }
 }
 
 window.Script959 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
+var currentText = player.GetVar("letesitmeny");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
+    player.SetVar("letesitmeny", currentText + buttonValue);
 }
 }
 
 window.Script960 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
+var currentText = player.GetVar("letesitmeny");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
+    player.SetVar("letesitmeny", currentText + buttonValue);
 }
 }
 
 window.Script961 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "1");
 }
 
 window.Script962 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "2");
 }
 
 window.Script963 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "3");
 }
 
 window.Script964 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "4");
 }
 
 window.Script965 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "5");
 }
 
 window.Script966 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "6");
 }
 
 window.Script967 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "7");
 }
 
 window.Script968 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "8");
 }
 
 window.Script969 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "9");
 }
 
 window.Script970 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "0");
 }
 
 window.Script971 = function()
@@ -12379,138 +12442,174 @@ if (buttonValue) {
 window.Script985 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script986 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script987 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script988 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script989 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script990 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script991 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script992 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script993 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script994 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script995 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script996 = function()
 {
   var player = GetPlayer();
+var currentText = player.GetVar("kozterulet");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("kozterulet", buttonValue);
+}
+}
+
+window.Script997 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kozterulet");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("kozterulet", buttonValue);
+}
+}
+
+window.Script998 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kozterulet");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("kozterulet", buttonValue);
+}
+}
+
+window.Script999 = function()
+{
+  var player = GetPlayer();
 var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
@@ -12520,176 +12619,150 @@ if (buttonValue) {
 }
 }
 
-window.Script997 = function()
-{
-  var player = GetPlayer();
-var text = player.GetVar("hazszam");
-player.SetVar("hazszam", text.slice(0, -1));
-}
-
-window.Script998 = function()
-{
-  var player = GetPlayer();
-var text = player.GetVar("letesitmeny");
-player.SetVar("letesitmeny", text.slice(0, -1));
-}
-
-window.Script999 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("vezeteknev");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("vezeteknev", currentText + buttonValue);
-}
-}
-
 window.Script1000 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("keresztnev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("keresztnev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script1001 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("vezeteknev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("vezeteknev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script1002 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("keresztnev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("keresztnev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script1003 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("vezeteknev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("vezeteknev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script1004 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("keresztnev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("keresztnev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script1005 = function()
 {
   var player = GetPlayer();
-var text = player.GetVar("vezeteknev");
-player.SetVar("vezeteknev", text.slice(0, -1));
+var currentText = player.GetVar("telepules");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
 }
 
 window.Script1006 = function()
 {
   var player = GetPlayer();
-var text = player.GetVar("keresztnev");
-player.SetVar("keresztnev", text.slice(0, -1));
+var currentText = player.GetVar("telepules");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
 }
 
 window.Script1007 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("vezeteknev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("vezeteknev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script1008 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("keresztnev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("keresztnev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script1009 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("vezeteknev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("vezeteknev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script1010 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("keresztnev");
+var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("keresztnev", currentText + buttonValue);
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script1011 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("vezeteknev");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("vezeteknev", currentText + buttonValue);
-}
+var text = player.GetVar("hazszam");
+player.SetVar("hazszam", text.slice(0, -1));
 }
 
 window.Script1012 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("keresztnev");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("keresztnev", currentText + buttonValue);
-}
+var text = player.GetVar("letesitmeny");
+player.SetVar("letesitmeny", text.slice(0, -1));
 }
 
 window.Script1013 = function()
@@ -12767,25 +12840,15 @@ if (buttonValue) {
 window.Script1019 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("vezeteknev");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("vezeteknev", currentText + buttonValue);
-}
+var text = player.GetVar("vezeteknev");
+player.SetVar("vezeteknev", text.slice(0, -1));
 }
 
 window.Script1020 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("keresztnev");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("keresztnev", currentText + buttonValue);
-}
+var text = player.GetVar("keresztnev");
+player.SetVar("keresztnev", text.slice(0, -1));
 }
 
 window.Script1021 = function()
@@ -13391,6 +13454,174 @@ if (buttonValue) {
 window.Script1071 = function()
 {
   var player = GetPlayer();
+var currentText = player.GetVar("vezeteknev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("vezeteknev", currentText + buttonValue);
+}
+}
+
+window.Script1072 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("keresztnev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("keresztnev", currentText + buttonValue);
+}
+}
+
+window.Script1073 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("vezeteknev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("vezeteknev", currentText + buttonValue);
+}
+}
+
+window.Script1074 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("keresztnev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("keresztnev", currentText + buttonValue);
+}
+}
+
+window.Script1075 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("vezeteknev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("vezeteknev", currentText + buttonValue);
+}
+}
+
+window.Script1076 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("keresztnev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("keresztnev", currentText + buttonValue);
+}
+}
+
+window.Script1077 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("vezeteknev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("vezeteknev", currentText + buttonValue);
+}
+}
+
+window.Script1078 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("keresztnev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("keresztnev", currentText + buttonValue);
+}
+}
+
+window.Script1079 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("vezeteknev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("vezeteknev", currentText + buttonValue);
+}
+}
+
+window.Script1080 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("keresztnev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("keresztnev", currentText + buttonValue);
+}
+}
+
+window.Script1081 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("vezeteknev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("vezeteknev", currentText + buttonValue);
+}
+}
+
+window.Script1082 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("keresztnev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("keresztnev", currentText + buttonValue);
+}
+}
+
+window.Script1083 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("vezeteknev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("vezeteknev", currentText + buttonValue);
+}
+}
+
+window.Script1084 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("keresztnev");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("keresztnev", currentText + buttonValue);
+}
+}
+
+window.Script1085 = function()
+{
+  var player = GetPlayer();
 var currentText = player.GetVar("kartya");
 
 if (currentText.length >= 4) {
@@ -13400,7 +13631,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1072 = function()
+window.Script1086 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13412,7 +13643,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1073 = function()
+window.Script1087 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13424,7 +13655,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1074 = function()
+window.Script1088 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13436,7 +13667,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1075 = function()
+window.Script1089 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13448,7 +13679,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1076 = function()
+window.Script1090 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13460,7 +13691,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1077 = function()
+window.Script1091 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13472,7 +13703,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1078 = function()
+window.Script1092 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13484,7 +13715,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1079 = function()
+window.Script1093 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13496,7 +13727,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1080 = function()
+window.Script1094 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13508,7 +13739,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1081 = function()
+window.Script1095 = function()
 {
   function enterFullscreen() {
     var element = document.documentElement;
@@ -13539,7 +13770,7 @@ enterFullscreen();
 
 }
 
-window.Script1082 = function()
+window.Script1096 = function()
 {
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -13555,7 +13786,7 @@ window.Script1082 = function()
 
 }
 
-window.Script1083 = function()
+window.Script1097 = function()
 {
   function enterFullscreen() {
     var element = document.documentElement;
@@ -13603,7 +13834,7 @@ enterFullscreen();
 
 }
 
-window.Script1084 = function()
+window.Script1098 = function()
 {
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -13619,7 +13850,7 @@ window.Script1084 = function()
 
 }
 
-window.Script1085 = function()
+window.Script1099 = function()
 {
   var player = GetPlayer();
 var text = player.GetVar("szinvalto");
@@ -13636,28 +13867,28 @@ player.SetVar("szinvalto", text);
 
 }
 
-window.Script1086 = function()
+window.Script1100 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szinvalto"); 
 player.SetVar("szinvalto", currentText + "🟡");
 }
 
-window.Script1087 = function()
+window.Script1101 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szinvalto"); 
 player.SetVar("szinvalto", currentText + "🔴");
 }
 
-window.Script1088 = function()
+window.Script1102 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szinvalto"); 
 player.SetVar("szinvalto", currentText + "⚪");
 }
 
-window.Script1089 = function()
+window.Script1103 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13669,7 +13900,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1090 = function()
+window.Script1104 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13681,7 +13912,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1091 = function()
+window.Script1105 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13693,7 +13924,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1092 = function()
+window.Script1106 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13705,7 +13936,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1093 = function()
+window.Script1107 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13717,7 +13948,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1094 = function()
+window.Script1108 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13729,7 +13960,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1095 = function()
+window.Script1109 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13741,7 +13972,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1096 = function()
+window.Script1110 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13753,7 +13984,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1097 = function()
+window.Script1111 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13765,7 +13996,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1098 = function()
+window.Script1112 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -13777,7 +14008,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1099 = function()
+window.Script1113 = function()
 {
   function enterFullscreen() {
     var element = document.documentElement;
@@ -13808,7 +14039,7 @@ enterFullscreen();
 
 }
 
-window.Script1100 = function()
+window.Script1114 = function()
 {
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -13824,7 +14055,7 @@ window.Script1100 = function()
 
 }
 
-window.Script1101 = function()
+window.Script1115 = function()
 {
   function enterFullscreen() {
     var element = document.documentElement;
@@ -13872,7 +14103,7 @@ enterFullscreen();
 
 }
 
-window.Script1102 = function()
+window.Script1116 = function()
 {
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -13885,190 +14116,190 @@ window.Script1102 = function()
         document.msExitFullscreen();
     }
 }
-
-}
-
-window.Script1103 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("runa1");
-
-var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
-var index = runak.indexOf(betu);
-index = (index + 1) % runak.length;
-
-player.SetVar("runa1", runak[index]);
-
-}
-
-window.Script1104 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("runa1");
-
-var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
-var index = runak.indexOf(betu);
-index = (index - 1 + runak.length) % runak.length;
-
-player.SetVar("runa1", runak[index]);
-
-}
-
-window.Script1105 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("runa2");
-
-var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
-var index = runak.indexOf(betu);
-index = (index + 1) % runak.length;
-
-player.SetVar("runa2", runak[index]);
-
-}
-
-window.Script1106 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("runa3");
-
-var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
-var index = runak.indexOf(betu);
-index = (index + 1) % runak.length;
-
-player.SetVar("runa3", runak[index]);
-
-}
-
-window.Script1107 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("runa4");
-
-var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
-var index = runak.indexOf(betu);
-index = (index + 1) % runak.length;
-
-player.SetVar("runa4", runak[index]);
-
-}
-
-window.Script1108 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("runa2");
-
-var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
-var index = runak.indexOf(betu);
-index = (index - 1 + runak.length) % runak.length;
-
-player.SetVar("runa2", runak[index]);
-
-}
-
-window.Script1109 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("runa3");
-
-var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
-var index = runak.indexOf(betu);
-index = (index - 1 + runak.length) % runak.length;
-
-player.SetVar("runa3", runak[index]);
-
-}
-
-window.Script1110 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("runa4");
-
-var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
-var index = runak.indexOf(betu);
-index = (index - 1 + runak.length) % runak.length;
-
-player.SetVar("runa4", runak[index]);
-
-}
-
-window.Script1111 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("betu1");
-
-var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
-var index = abc.indexOf(betu);
-index = (index + 1) % abc.length;
-
-player.SetVar("betu1", abc[index]);
-}
-
-window.Script1112 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("betu1");
-
-var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
-var index = abc.indexOf(betu);
-index = (index - 1 + abc.length) % abc.length;
-
-player.SetVar("betu1", abc[index]);
-
-}
-
-window.Script1113 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("betu2");
-
-var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
-var index = abc.indexOf(betu);
-index = (index + 1) % abc.length;
-
-player.SetVar("betu2", abc[index]);
-}
-
-window.Script1114 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("betu3");
-
-var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
-var index = abc.indexOf(betu);
-index = (index + 1) % abc.length;
-
-player.SetVar("betu3", abc[index]);
-}
-
-window.Script1115 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("betu4");
-
-var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
-var index = abc.indexOf(betu);
-index = (index + 1) % abc.length;
-
-player.SetVar("betu4", abc[index]);
-}
-
-window.Script1116 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("betu2");
-
-var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
-var index = abc.indexOf(betu);
-index = (index - 1 + abc.length) % abc.length;
-
-player.SetVar("betu2", abc[index]);
 
 }
 
 window.Script1117 = function()
 {
   var player = GetPlayer();
+var betu = player.GetVar("runa1");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index + 1) % runak.length;
+
+player.SetVar("runa1", runak[index]);
+
+}
+
+window.Script1118 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa1");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index - 1 + runak.length) % runak.length;
+
+player.SetVar("runa1", runak[index]);
+
+}
+
+window.Script1119 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa2");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index + 1) % runak.length;
+
+player.SetVar("runa2", runak[index]);
+
+}
+
+window.Script1120 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa3");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index + 1) % runak.length;
+
+player.SetVar("runa3", runak[index]);
+
+}
+
+window.Script1121 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa4");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index + 1) % runak.length;
+
+player.SetVar("runa4", runak[index]);
+
+}
+
+window.Script1122 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa2");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index - 1 + runak.length) % runak.length;
+
+player.SetVar("runa2", runak[index]);
+
+}
+
+window.Script1123 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa3");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index - 1 + runak.length) % runak.length;
+
+player.SetVar("runa3", runak[index]);
+
+}
+
+window.Script1124 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("runa4");
+
+var runak = ["ᛗ", "ᛖ", "ᛈ", "ᚻ", "ᚩ", "ᛞ", "ᚳ", "ᛋ", "ᛇ", "ᚹ", "ᛠ", "ᚾ", "ᚼ", "ᚱ", "ᚲ", "ᛄ"];
+var index = runak.indexOf(betu);
+index = (index - 1 + runak.length) % runak.length;
+
+player.SetVar("runa4", runak[index]);
+
+}
+
+window.Script1125 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu1");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index + 1) % abc.length;
+
+player.SetVar("betu1", abc[index]);
+}
+
+window.Script1126 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu1");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index - 1 + abc.length) % abc.length;
+
+player.SetVar("betu1", abc[index]);
+
+}
+
+window.Script1127 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu2");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index + 1) % abc.length;
+
+player.SetVar("betu2", abc[index]);
+}
+
+window.Script1128 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu3");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index + 1) % abc.length;
+
+player.SetVar("betu3", abc[index]);
+}
+
+window.Script1129 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu4");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index + 1) % abc.length;
+
+player.SetVar("betu4", abc[index]);
+}
+
+window.Script1130 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("betu2");
+
+var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+var index = abc.indexOf(betu);
+index = (index - 1 + abc.length) % abc.length;
+
+player.SetVar("betu2", abc[index]);
+
+}
+
+window.Script1131 = function()
+{
+  var player = GetPlayer();
 var betu = player.GetVar("betu3");
 
 var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
@@ -14079,7 +14310,7 @@ player.SetVar("betu3", abc[index]);
 
 }
 
-window.Script1118 = function()
+window.Script1132 = function()
 {
   var player = GetPlayer();
 var betu = player.GetVar("betu4");
@@ -14092,7 +14323,7 @@ player.SetVar("betu4", abc[index]);
 
 }
 
-window.Script1119 = function()
+window.Script1133 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14104,7 +14335,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1120 = function()
+window.Script1134 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14116,7 +14347,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1121 = function()
+window.Script1135 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14128,7 +14359,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1122 = function()
+window.Script1136 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14140,7 +14371,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1123 = function()
+window.Script1137 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14152,7 +14383,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1124 = function()
+window.Script1138 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14164,7 +14395,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1125 = function()
+window.Script1139 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14176,7 +14407,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1126 = function()
+window.Script1140 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14188,7 +14419,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1127 = function()
+window.Script1141 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14200,7 +14431,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1128 = function()
+window.Script1142 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14212,7 +14443,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1129 = function()
+window.Script1143 = function()
 {
   function enterFullscreen() {
     var element = document.documentElement;
@@ -14243,7 +14474,7 @@ enterFullscreen();
 
 }
 
-window.Script1130 = function()
+window.Script1144 = function()
 {
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -14259,7 +14490,7 @@ window.Script1130 = function()
 
 }
 
-window.Script1131 = function()
+window.Script1145 = function()
 {
   function enterFullscreen() {
     var element = document.documentElement;
@@ -14307,7 +14538,7 @@ enterFullscreen();
 
 }
 
-window.Script1132 = function()
+window.Script1146 = function()
 {
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -14323,84 +14554,84 @@ window.Script1132 = function()
 
 }
 
-window.Script1133 = function()
+window.Script1147 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "1");
 }
 
-window.Script1134 = function()
+window.Script1148 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "2");
 }
 
-window.Script1135 = function()
+window.Script1149 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "3");
 }
 
-window.Script1136 = function()
+window.Script1150 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "4");
 }
 
-window.Script1137 = function()
+window.Script1151 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "5");
 }
 
-window.Script1138 = function()
+window.Script1152 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "6");
 }
 
-window.Script1139 = function()
+window.Script1153 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "7");
 }
 
-window.Script1140 = function()
+window.Script1154 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "8");
 }
 
-window.Script1141 = function()
+window.Script1155 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "9");
 }
 
-window.Script1142 = function()
+window.Script1156 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "0");
 }
 
-window.Script1143 = function()
+window.Script1157 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("muhely"); 
 player.SetVar("muhely", currentText + "C");
 }
 
-window.Script1144 = function()
+window.Script1158 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14412,7 +14643,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1145 = function()
+window.Script1159 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14424,7 +14655,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1146 = function()
+window.Script1160 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14436,7 +14667,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1147 = function()
+window.Script1161 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14448,7 +14679,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1148 = function()
+window.Script1162 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14460,7 +14691,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1149 = function()
+window.Script1163 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14472,7 +14703,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1150 = function()
+window.Script1164 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14484,7 +14715,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1151 = function()
+window.Script1165 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14496,7 +14727,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1152 = function()
+window.Script1166 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14508,7 +14739,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1153 = function()
+window.Script1167 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14520,7 +14751,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1154 = function()
+window.Script1168 = function()
 {
   function enterFullscreen() {
     var element = document.documentElement;
@@ -14551,7 +14782,7 @@ enterFullscreen();
 
 }
 
-window.Script1155 = function()
+window.Script1169 = function()
 {
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -14567,7 +14798,7 @@ window.Script1155 = function()
 
 }
 
-window.Script1156 = function()
+window.Script1170 = function()
 {
   function enterFullscreen() {
     var element = document.documentElement;
@@ -14615,7 +14846,7 @@ enterFullscreen();
 
 }
 
-window.Script1157 = function()
+window.Script1171 = function()
 {
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -14631,7 +14862,7 @@ window.Script1157 = function()
 
 }
 
-window.Script1158 = function()
+window.Script1172 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -14642,7 +14873,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1159 = function()
+window.Script1173 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -14653,7 +14884,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1160 = function()
+window.Script1174 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -14664,7 +14895,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1161 = function()
+window.Script1175 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -14675,7 +14906,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1162 = function()
+window.Script1176 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -14686,7 +14917,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1163 = function()
+window.Script1177 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -14697,7 +14928,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1164 = function()
+window.Script1178 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -14708,7 +14939,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1165 = function()
+window.Script1179 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -14719,7 +14950,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1166 = function()
+window.Script1180 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -14730,7 +14961,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1167 = function()
+window.Script1181 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("szekreny1"); 
@@ -14741,14 +14972,14 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1168 = function()
+window.Script1182 = function()
 {
   var player = GetPlayer();
 var text = player.GetVar("szekreny1");
 player.SetVar("szekreny1", text.slice(0, -1));
 }
 
-window.Script1169 = function()
+window.Script1183 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14760,7 +14991,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1170 = function()
+window.Script1184 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14772,7 +15003,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1171 = function()
+window.Script1185 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14784,7 +15015,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1172 = function()
+window.Script1186 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14796,7 +15027,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1173 = function()
+window.Script1187 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14808,7 +15039,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1174 = function()
+window.Script1188 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14820,7 +15051,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1175 = function()
+window.Script1189 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14832,7 +15063,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1176 = function()
+window.Script1190 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14844,7 +15075,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1177 = function()
+window.Script1191 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14856,7 +15087,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1178 = function()
+window.Script1192 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -14868,7 +15099,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1179 = function()
+window.Script1193 = function()
 {
   function enterFullscreen() {
     var element = document.documentElement;
@@ -14899,7 +15130,7 @@ enterFullscreen();
 
 }
 
-window.Script1180 = function()
+window.Script1194 = function()
 {
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -14915,7 +15146,7 @@ window.Script1180 = function()
 
 }
 
-window.Script1181 = function()
+window.Script1195 = function()
 {
   function enterFullscreen() {
     var element = document.documentElement;
@@ -14963,7 +15194,7 @@ enterFullscreen();
 
 }
 
-window.Script1182 = function()
+window.Script1196 = function()
 {
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -14979,7 +15210,7 @@ window.Script1182 = function()
 
 }
 
-window.Script1183 = function()
+window.Script1197 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("koordinata");
@@ -14992,7 +15223,7 @@ if (buttonValue && currentText.length === 1) {
 
 }
 
-window.Script1184 = function()
+window.Script1198 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("koordinata");
@@ -15005,7 +15236,7 @@ if (buttonValue && currentText.length === 0) {
 
 }
 
-window.Script1185 = function()
+window.Script1199 = function()
 {
   var player = GetPlayer();
 var text = player.GetVar("koordinata");
@@ -15018,7 +15249,7 @@ if (text.length === 3) {
 
 }
 
-window.Script1186 = function()
+window.Script1200 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -15029,7 +15260,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1187 = function()
+window.Script1201 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -15040,7 +15271,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1188 = function()
+window.Script1202 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -15051,7 +15282,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1189 = function()
+window.Script1203 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -15062,7 +15293,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1190 = function()
+window.Script1204 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -15073,7 +15304,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1191 = function()
+window.Script1205 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -15084,7 +15315,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1192 = function()
+window.Script1206 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -15095,7 +15326,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1193 = function()
+window.Script1207 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -15106,7 +15337,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1194 = function()
+window.Script1208 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -15117,7 +15348,7 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1195 = function()
+window.Script1209 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("raktar"); 
@@ -15128,14 +15359,14 @@ if (currentText.length < 4) {
 }
 }
 
-window.Script1196 = function()
+window.Script1210 = function()
 {
   var player = GetPlayer();
 var text = player.GetVar("raktar");
 player.SetVar("raktar", text.slice(0, -1));
 }
 
-window.Script1197 = function()
+window.Script1211 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15147,7 +15378,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1198 = function()
+window.Script1212 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15159,7 +15390,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1199 = function()
+window.Script1213 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15171,7 +15402,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1200 = function()
+window.Script1214 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15183,7 +15414,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1201 = function()
+window.Script1215 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15195,7 +15426,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1202 = function()
+window.Script1216 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15207,7 +15438,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1203 = function()
+window.Script1217 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15219,7 +15450,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1204 = function()
+window.Script1218 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15231,7 +15462,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1205 = function()
+window.Script1219 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15240,237 +15471,6 @@ if (currentText.length >= 4) {
     player.SetVar("kartya", "9");
 } else {
     player.SetVar("kartya", currentText + "9");
-}
-}
-
-window.Script1206 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("kartya");
-
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "0");
-} else {
-    player.SetVar("kartya", currentText + "0");
-}
-}
-
-window.Script1207 = function()
-{
-  function enterFullscreen() {
-    var element = document.documentElement;
-    var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-    if (!isIOS) {
-        if (element.requestFullscreen) {
-            element.requestFullscreen();
-        } else if (element.mozRequestFullScreen) {
-            element.mozRequestFullScreen();
-        } else if (element.webkitRequestFullscreen) {
-            element.webkitRequestFullscreen();
-        } else if (element.msRequestFullscreen) {
-            element.msRequestFullscreen();
-        }
-    } else {
-        // iOS: csak videót lehet fullscreenre rakni
-        var video = document.querySelector("video");
-        if (video && video.webkitEnterFullscreen) {
-            video.webkitEnterFullscreen();
-        } else {
-            alert("iOS-en csak videót lehet teljes képernyőre rakni.");
-        }
-    }
-}
-
-enterFullscreen();
-
-}
-
-window.Script1208 = function()
-{
-  function exitFullscreen() {
-    if (document.exitFullscreen) {
-        document.exitFullscreen();
-    } else if (document.mozCancelFullScreen) { // Firefox
-        document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) { // Chrome, Safari
-        document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) { // IE / Edge
-        document.msExitFullscreen();
-    }
-}
-
-}
-
-window.Script1209 = function()
-{
-  function enterFullscreen() {
-    var element = document.documentElement;
-    var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-    if (!isIOS) {
-        if (element.requestFullscreen) {
-            element.requestFullscreen();
-        } else if (element.mozRequestFullScreen) {
-            element.mozRequestFullScreen();
-        } else if (element.webkitRequestFullscreen) {
-            element.webkitRequestFullscreen();
-        } else if (element.msRequestFullscreen) {
-            element.msRequestFullscreen();
-        }
-    } else {
-        // Keresünk vagy létrehozunk egy rejtett videót
-        var video = document.getElementById("hiddenFullscreenVideo");
-        if (!video) {
-            video = document.createElement("video");
-            video.id = "hiddenFullscreenVideo";
-            video.src = "data:video/mp4;base64,AAAAIGZ0eXBtcDQyAAAAAG1wNDFtcDQyaXNvbTEyMAAAAG1vb3YAAABsbXZoZAAAAAB8JgB8JgAAAAAAAGQAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAABhzdHRzAAAAAAAAAAEAAAABAAAAAA=="; // 1 képkockás, üres mp4
-            video.setAttribute("playsinline", "true");
-            video.style.position = "absolute";
-            video.style.width = "1px";
-            video.style.height = "1px";
-            video.style.opacity = "0";
-            document.body.appendChild(video);
-        }
-
-        // Fullscreen kérés
-        if (video.webkitEnterFullscreen) {
-            video.play().then(() => {
-                video.webkitEnterFullscreen();
-            }).catch(() => {
-                alert("Nem sikerült fullscreen módba lépni.");
-            });
-        } else {
-            alert("Ez az iOS böngésző nem támogatja a fullscreen módot.");
-        }
-    }
-}
-
-enterFullscreen();
-
-}
-
-window.Script1210 = function()
-{
-  function exitFullscreen() {
-    if (document.exitFullscreen) {
-        document.exitFullscreen();
-    } else if (document.mozCancelFullScreen) { // Firefox
-        document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) { // Chrome, Safari
-        document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) { // IE / Edge
-        document.msExitFullscreen();
-    }
-}
-
-}
-
-window.Script1211 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("szam1");
-
-var abc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var index = abc.indexOf(betu);
-index = (index + 1) % abc.length;
-
-player.SetVar("szam1", abc[index]);
-}
-
-window.Script1212 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("szam2");
-
-var abc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var index = abc.indexOf(betu);
-index = (index + 1) % abc.length;
-
-player.SetVar("szam2", abc[index]);
-}
-
-window.Script1213 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("szam3");
-
-var abc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var index = abc.indexOf(betu);
-index = (index + 1) % abc.length;
-
-player.SetVar("szam3", abc[index]);
-}
-
-window.Script1214 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("szam4");
-
-var abc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var index = abc.indexOf(betu);
-index = (index + 1) % abc.length;
-
-player.SetVar("szam4", abc[index]);
-}
-
-window.Script1215 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("szam1");
-
-var abc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var index = abc.indexOf(betu);
-index = (index - 1 + abc.length) % abc.length;
-
-player.SetVar("szam1", abc[index]);
-}
-
-window.Script1216 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("szam2");
-
-var abc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var index = abc.indexOf(betu);
-index = (index - 1 + abc.length) % abc.length;
-
-player.SetVar("szam2", abc[index]);
-}
-
-window.Script1217 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("szam3");
-
-var abc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var index = abc.indexOf(betu);
-index = (index - 1 + abc.length) % abc.length;
-
-player.SetVar("szam3", abc[index]);
-}
-
-window.Script1218 = function()
-{
-  var player = GetPlayer();
-var betu = player.GetVar("szam4");
-
-var abc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var index = abc.indexOf(betu);
-index = (index - 1 + abc.length) % abc.length;
-
-player.SetVar("szam4", abc[index]);
-}
-
-window.Script1219 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("kartya");
-
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "1");
-} else {
-    player.SetVar("kartya", currentText + "1");
 }
 }
 
@@ -15480,109 +15480,13 @@ window.Script1220 = function()
 var currentText = player.GetVar("kartya");
 
 if (currentText.length >= 4) {
-    player.SetVar("kartya", "2");
-} else {
-    player.SetVar("kartya", currentText + "2");
-}
-}
-
-window.Script1221 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("kartya");
-
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "3");
-} else {
-    player.SetVar("kartya", currentText + "3");
-}
-}
-
-window.Script1222 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("kartya");
-
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "4");
-} else {
-    player.SetVar("kartya", currentText + "4");
-}
-}
-
-window.Script1223 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("kartya");
-
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "5");
-} else {
-    player.SetVar("kartya", currentText + "5");
-}
-}
-
-window.Script1224 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("kartya");
-
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "6");
-} else {
-    player.SetVar("kartya", currentText + "6");
-}
-}
-
-window.Script1225 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("kartya");
-
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "7");
-} else {
-    player.SetVar("kartya", currentText + "7");
-}
-}
-
-window.Script1226 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("kartya");
-
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "8");
-} else {
-    player.SetVar("kartya", currentText + "8");
-}
-}
-
-window.Script1227 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("kartya");
-
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "9");
-} else {
-    player.SetVar("kartya", currentText + "9");
-}
-}
-
-window.Script1228 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("kartya");
-
-if (currentText.length >= 4) {
     player.SetVar("kartya", "0");
 } else {
     player.SetVar("kartya", currentText + "0");
 }
 }
 
-window.Script1229 = function()
+window.Script1221 = function()
 {
   function enterFullscreen() {
     var element = document.documentElement;
@@ -15613,7 +15517,7 @@ enterFullscreen();
 
 }
 
-window.Script1230 = function()
+window.Script1222 = function()
 {
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -15629,7 +15533,7 @@ window.Script1230 = function()
 
 }
 
-window.Script1231 = function()
+window.Script1223 = function()
 {
   function enterFullscreen() {
     var element = document.documentElement;
@@ -15677,7 +15581,7 @@ enterFullscreen();
 
 }
 
-window.Script1232 = function()
+window.Script1224 = function()
 {
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -15693,41 +15597,103 @@ window.Script1232 = function()
 
 }
 
+window.Script1225 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("szam1");
+
+var abc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var index = abc.indexOf(betu);
+index = (index + 1) % abc.length;
+
+player.SetVar("szam1", abc[index]);
+}
+
+window.Script1226 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("szam2");
+
+var abc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var index = abc.indexOf(betu);
+index = (index + 1) % abc.length;
+
+player.SetVar("szam2", abc[index]);
+}
+
+window.Script1227 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("szam3");
+
+var abc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var index = abc.indexOf(betu);
+index = (index + 1) % abc.length;
+
+player.SetVar("szam3", abc[index]);
+}
+
+window.Script1228 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("szam4");
+
+var abc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var index = abc.indexOf(betu);
+index = (index + 1) % abc.length;
+
+player.SetVar("szam4", abc[index]);
+}
+
+window.Script1229 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("szam1");
+
+var abc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var index = abc.indexOf(betu);
+index = (index - 1 + abc.length) % abc.length;
+
+player.SetVar("szam1", abc[index]);
+}
+
+window.Script1230 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("szam2");
+
+var abc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var index = abc.indexOf(betu);
+index = (index - 1 + abc.length) % abc.length;
+
+player.SetVar("szam2", abc[index]);
+}
+
+window.Script1231 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("szam3");
+
+var abc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var index = abc.indexOf(betu);
+index = (index - 1 + abc.length) % abc.length;
+
+player.SetVar("szam3", abc[index]);
+}
+
+window.Script1232 = function()
+{
+  var player = GetPlayer();
+var betu = player.GetVar("szam4");
+
+var abc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var index = abc.indexOf(betu);
+index = (index - 1 + abc.length) % abc.length;
+
+player.SetVar("szam4", abc[index]);
+}
+
 window.Script1233 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("utvonal"); 
-
-player.SetVar("utvonal", currentText + "◀ ");
-
-}
-
-window.Script1234 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("utvonal"); 
-
-player.SetVar("utvonal", currentText + "▲ ");
-
-}
-
-window.Script1235 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("utvonal"); 
-
-player.SetVar("utvonal", currentText + "▶ ");
-
-}
-
-window.Script1236 = function()
-{
-  var player = GetPlayer();
-var text = player.GetVar("utvonal");
-player.SetVar("utvonal", text.slice(0, -2));
-}
-
-window.Script1237 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15739,7 +15705,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1238 = function()
+window.Script1234 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15751,7 +15717,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1239 = function()
+window.Script1235 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15763,7 +15729,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1240 = function()
+window.Script1236 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15775,7 +15741,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1241 = function()
+window.Script1237 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15787,7 +15753,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1242 = function()
+window.Script1238 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15799,7 +15765,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1243 = function()
+window.Script1239 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15811,7 +15777,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1244 = function()
+window.Script1240 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15823,7 +15789,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1245 = function()
+window.Script1241 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15835,7 +15801,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1246 = function()
+window.Script1242 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -15847,7 +15813,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1247 = function()
+window.Script1243 = function()
 {
   function enterFullscreen() {
     var element = document.documentElement;
@@ -15878,7 +15844,7 @@ enterFullscreen();
 
 }
 
-window.Script1248 = function()
+window.Script1244 = function()
 {
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -15894,7 +15860,7 @@ window.Script1248 = function()
 
 }
 
-window.Script1249 = function()
+window.Script1245 = function()
 {
   function enterFullscreen() {
     var element = document.documentElement;
@@ -15942,7 +15908,7 @@ enterFullscreen();
 
 }
 
-window.Script1250 = function()
+window.Script1246 = function()
 {
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -15956,6 +15922,40 @@ window.Script1250 = function()
     }
 }
 
+}
+
+window.Script1247 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("utvonal"); 
+
+player.SetVar("utvonal", currentText + "◀ ");
+
+}
+
+window.Script1248 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("utvonal"); 
+
+player.SetVar("utvonal", currentText + "▲ ");
+
+}
+
+window.Script1249 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("utvonal"); 
+
+player.SetVar("utvonal", currentText + "▶ ");
+
+}
+
+window.Script1250 = function()
+{
+  var player = GetPlayer();
+var text = player.GetVar("utvonal");
+player.SetVar("utvonal", text.slice(0, -2));
 }
 
 window.Script1251 = function()
@@ -16654,253 +16654,316 @@ window.Script1292 = function()
 window.Script1293 = function()
 {
   var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "1");
+} else {
+    player.SetVar("kartya", currentText + "1");
+}
+}
+
+window.Script1294 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "2");
+} else {
+    player.SetVar("kartya", currentText + "2");
+}
+}
+
+window.Script1295 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "3");
+} else {
+    player.SetVar("kartya", currentText + "3");
+}
+}
+
+window.Script1296 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "4");
+} else {
+    player.SetVar("kartya", currentText + "4");
+}
+}
+
+window.Script1297 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "5");
+} else {
+    player.SetVar("kartya", currentText + "5");
+}
+}
+
+window.Script1298 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "6");
+} else {
+    player.SetVar("kartya", currentText + "6");
+}
+}
+
+window.Script1299 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "7");
+} else {
+    player.SetVar("kartya", currentText + "7");
+}
+}
+
+window.Script1300 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "8");
+} else {
+    player.SetVar("kartya", currentText + "8");
+}
+}
+
+window.Script1301 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "9");
+} else {
+    player.SetVar("kartya", currentText + "9");
+}
+}
+
+window.Script1302 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kartya");
+
+if (currentText.length >= 4) {
+    player.SetVar("kartya", "0");
+} else {
+    player.SetVar("kartya", currentText + "0");
+}
+}
+
+window.Script1303 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+    var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (!isIOS) {
+        if (element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) {
+            element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullscreen) {
+            element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) {
+            element.msRequestFullscreen();
+        }
+    } else {
+        // iOS: csak videót lehet fullscreenre rakni
+        var video = document.querySelector("video");
+        if (video && video.webkitEnterFullscreen) {
+            video.webkitEnterFullscreen();
+        } else {
+            alert("iOS-en csak videót lehet teljes képernyőre rakni.");
+        }
+    }
+}
+
+enterFullscreen();
+
+}
+
+window.Script1304 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script1305 = function()
+{
+  function enterFullscreen() {
+    var element = document.documentElement;
+    var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (!isIOS) {
+        if (element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) {
+            element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullscreen) {
+            element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) {
+            element.msRequestFullscreen();
+        }
+    } else {
+        // Keresünk vagy létrehozunk egy rejtett videót
+        var video = document.getElementById("hiddenFullscreenVideo");
+        if (!video) {
+            video = document.createElement("video");
+            video.id = "hiddenFullscreenVideo";
+            video.src = "data:video/mp4;base64,AAAAIGZ0eXBtcDQyAAAAAG1wNDFtcDQyaXNvbTEyMAAAAG1vb3YAAABsbXZoZAAAAAB8JgB8JgAAAAAAAGQAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAABhzdHRzAAAAAAAAAAEAAAABAAAAAA=="; // 1 képkockás, üres mp4
+            video.setAttribute("playsinline", "true");
+            video.style.position = "absolute";
+            video.style.width = "1px";
+            video.style.height = "1px";
+            video.style.opacity = "0";
+            document.body.appendChild(video);
+        }
+
+        // Fullscreen kérés
+        if (video.webkitEnterFullscreen) {
+            video.play().then(() => {
+                video.webkitEnterFullscreen();
+            }).catch(() => {
+                alert("Nem sikerült fullscreen módba lépni.");
+            });
+        } else {
+            alert("Ez az iOS böngésző nem támogatja a fullscreen módot.");
+        }
+    }
+}
+
+enterFullscreen();
+
+}
+
+window.Script1306 = function()
+{
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE / Edge
+        document.msExitFullscreen();
+    }
+}
+
+}
+
+window.Script1307 = function()
+{
+  var player = GetPlayer();
 var text = player.GetVar("hazszam");
 player.SetVar("hazszam", text.slice(0, -1));
 }
 
-window.Script1294 = function()
+window.Script1308 = function()
 {
   var player = GetPlayer();
 var text = player.GetVar("letesitmeny");
 player.SetVar("letesitmeny", text.slice(0, -1));
 }
 
-window.Script1295 = function()
+window.Script1309 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "1");
 }
 
-window.Script1296 = function()
+window.Script1310 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "2");
 }
 
-window.Script1297 = function()
+window.Script1311 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "3");
 }
 
-window.Script1298 = function()
+window.Script1312 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "4");
 }
 
-window.Script1299 = function()
+window.Script1313 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "5");
 }
 
-window.Script1300 = function()
+window.Script1314 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "6");
 }
 
-window.Script1301 = function()
+window.Script1315 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "7");
 }
 
-window.Script1302 = function()
+window.Script1316 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "8");
 }
 
-window.Script1303 = function()
+window.Script1317 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "9");
 }
 
-window.Script1304 = function()
+window.Script1318 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "0");
-}
-
-window.Script1305 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1306 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1307 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1308 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1309 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1310 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1311 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1312 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1313 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1314 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1315 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1316 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1317 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1318 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
 }
 
 window.Script1319 = function()
@@ -17062,9 +17125,13 @@ if (buttonValue) {
 window.Script1332 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny"); 
-player.SetVar("letesitmeny", currentText + " ");
+var currentText = player.GetVar("letesitmeny");
 
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1333 = function()
@@ -17166,239 +17233,235 @@ if (buttonValue) {
 window.Script1341 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "1");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1342 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "2");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1343 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "3");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1344 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "4");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1345 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "5");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1346 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "6");
+var currentText = player.GetVar("letesitmeny"); 
+player.SetVar("letesitmeny", currentText + " ");
+
 }
 
 window.Script1347 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "7");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1348 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "8");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1349 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "9");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1350 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "0");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1351 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
+var currentText = player.GetVar("letesitmeny");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
+    player.SetVar("letesitmeny", currentText + buttonValue);
 }
 }
 
 window.Script1352 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
+var currentText = player.GetVar("letesitmeny");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
+    player.SetVar("letesitmeny", currentText + buttonValue);
 }
 }
 
 window.Script1353 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
+var currentText = player.GetVar("letesitmeny");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
+    player.SetVar("letesitmeny", currentText + buttonValue);
 }
 }
 
 window.Script1354 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
+var currentText = player.GetVar("letesitmeny");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
+    player.SetVar("letesitmeny", currentText + buttonValue);
 }
 }
 
 window.Script1355 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "1");
 }
 
 window.Script1356 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "2");
 }
 
 window.Script1357 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "3");
 }
 
 window.Script1358 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "4");
 }
 
 window.Script1359 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "5");
 }
 
 window.Script1360 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "6");
 }
 
 window.Script1361 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "7");
 }
 
 window.Script1362 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "8");
 }
 
 window.Script1363 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "9");
 }
 
 window.Script1364 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "0");
 }
 
 window.Script1365 = function()
@@ -17572,136 +17635,172 @@ if (buttonValue) {
 window.Script1379 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1380 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1381 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1382 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1383 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1384 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1385 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1386 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1387 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1388 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1389 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1390 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kozterulet");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("kozterulet", buttonValue);
+}
+}
+
+window.Script1391 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kozterulet");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("kozterulet", buttonValue);
+}
+}
+
+window.Script1392 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kozterulet");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("kozterulet", buttonValue);
+}
+}
+
+window.Script1393 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("telepules");
@@ -17713,7 +17812,139 @@ if (buttonValue) {
 }
 }
 
-window.Script1391 = function()
+window.Script1394 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("telepules");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
+}
+
+window.Script1395 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("telepules");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
+}
+
+window.Script1396 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("telepules");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
+}
+
+window.Script1397 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("telepules");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
+}
+
+window.Script1398 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("telepules");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
+}
+
+window.Script1399 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("telepules");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
+}
+
+window.Script1400 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("telepules");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
+}
+
+window.Script1401 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("telepules");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
+}
+
+window.Script1402 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("telepules");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
+}
+
+window.Script1403 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("telepules");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
+}
+
+window.Script1404 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("telepules");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
+}
+
+window.Script1405 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -17725,7 +17956,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1392 = function()
+window.Script1406 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -17737,7 +17968,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1393 = function()
+window.Script1407 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -17749,7 +17980,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1394 = function()
+window.Script1408 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -17761,7 +17992,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1395 = function()
+window.Script1409 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -17773,7 +18004,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1396 = function()
+window.Script1410 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -17785,7 +18016,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1397 = function()
+window.Script1411 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -17797,7 +18028,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1398 = function()
+window.Script1412 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -17809,7 +18040,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1399 = function()
+window.Script1413 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -17821,7 +18052,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1400 = function()
+window.Script1414 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("kartya");
@@ -17833,7 +18064,7 @@ if (currentText.length >= 4) {
 }
 }
 
-window.Script1401 = function()
+window.Script1415 = function()
 {
   function enterFullscreen() {
     var element = document.documentElement;
@@ -17864,7 +18095,7 @@ enterFullscreen();
 
 }
 
-window.Script1402 = function()
+window.Script1416 = function()
 {
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -17880,7 +18111,7 @@ window.Script1402 = function()
 
 }
 
-window.Script1403 = function()
+window.Script1417 = function()
 {
   function enterFullscreen() {
     var element = document.documentElement;
@@ -17928,7 +18159,7 @@ enterFullscreen();
 
 }
 
-window.Script1404 = function()
+window.Script1418 = function()
 {
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -17944,256 +18175,88 @@ window.Script1404 = function()
 
 }
 
-window.Script1405 = function()
+window.Script1419 = function()
 {
   var player = GetPlayer();
 var text = player.GetVar("hazszam");
 player.SetVar("hazszam", text.slice(0, -1));
 }
 
-window.Script1406 = function()
+window.Script1420 = function()
 {
   var player = GetPlayer();
 var text = player.GetVar("letesitmeny");
 player.SetVar("letesitmeny", text.slice(0, -1));
 }
 
-window.Script1407 = function()
+window.Script1421 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "1");
 }
 
-window.Script1408 = function()
+window.Script1422 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "2");
 }
 
-window.Script1409 = function()
+window.Script1423 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "3");
 }
 
-window.Script1410 = function()
+window.Script1424 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "4");
 }
 
-window.Script1411 = function()
+window.Script1425 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "5");
 }
 
-window.Script1412 = function()
+window.Script1426 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "6");
 }
 
-window.Script1413 = function()
+window.Script1427 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "7");
 }
 
-window.Script1414 = function()
+window.Script1428 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "8");
 }
 
-window.Script1415 = function()
+window.Script1429 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "9");
 }
 
-window.Script1416 = function()
+window.Script1430 = function()
 {
   var player = GetPlayer();
 var currentText = player.GetVar("letesitmeny"); 
 player.SetVar("letesitmeny", currentText + "0");
-}
-
-window.Script1417 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1418 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1419 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1420 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1421 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1422 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1423 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1424 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1425 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1426 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1427 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1428 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1429 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
-}
-
-window.Script1430 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("letesitmeny", currentText + buttonValue);
-}
 }
 
 window.Script1431 = function()
@@ -18355,9 +18418,13 @@ if (buttonValue) {
 window.Script1444 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("letesitmeny"); 
-player.SetVar("letesitmeny", currentText + " ");
+var currentText = player.GetVar("letesitmeny");
 
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1445 = function()
@@ -18459,239 +18526,235 @@ if (buttonValue) {
 window.Script1453 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "1");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1454 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "2");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1455 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "3");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1456 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "4");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1457 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "5");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1458 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "6");
+var currentText = player.GetVar("letesitmeny"); 
+player.SetVar("letesitmeny", currentText + " ");
+
 }
 
 window.Script1459 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "7");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1460 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "8");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1461 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "9");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1462 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("hazszam"); 
-player.SetVar("hazszam", currentText + "0");
+var currentText = player.GetVar("letesitmeny");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("letesitmeny", currentText + buttonValue);
+}
 }
 
 window.Script1463 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
+var currentText = player.GetVar("letesitmeny");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
+    player.SetVar("letesitmeny", currentText + buttonValue);
 }
 }
 
 window.Script1464 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
+var currentText = player.GetVar("letesitmeny");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
+    player.SetVar("letesitmeny", currentText + buttonValue);
 }
 }
 
 window.Script1465 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
+var currentText = player.GetVar("letesitmeny");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
+    player.SetVar("letesitmeny", currentText + buttonValue);
 }
 }
 
 window.Script1466 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
+var currentText = player.GetVar("letesitmeny");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
+    player.SetVar("letesitmeny", currentText + buttonValue);
 }
 }
 
 window.Script1467 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "1");
 }
 
 window.Script1468 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "2");
 }
 
 window.Script1469 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "3");
 }
 
 window.Script1470 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "4");
 }
 
 window.Script1471 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "5");
 }
 
 window.Script1472 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "6");
 }
 
 window.Script1473 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "7");
 }
 
 window.Script1474 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "8");
 }
 
 window.Script1475 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "9");
 }
 
 window.Script1476 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kozterulet");
-
-var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
-
-if (buttonValue) {
-    player.SetVar("kozterulet", buttonValue);
-}
+var currentText = player.GetVar("hazszam"); 
+player.SetVar("hazszam", currentText + "0");
 }
 
 window.Script1477 = function()
@@ -18865,138 +18928,174 @@ if (buttonValue) {
 window.Script1491 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1492 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1493 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1494 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1495 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1496 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1497 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1498 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1499 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1500 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1501 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("telepules");
+var currentText = player.GetVar("kozterulet");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
 if (buttonValue) {
-    player.SetVar("telepules", buttonValue);
+    player.SetVar("kozterulet", buttonValue);
 }
 }
 
 window.Script1502 = function()
 {
   var player = GetPlayer();
+var currentText = player.GetVar("kozterulet");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("kozterulet", buttonValue);
+}
+}
+
+window.Script1503 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kozterulet");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("kozterulet", buttonValue);
+}
+}
+
+window.Script1504 = function()
+{
+  var player = GetPlayer();
+var currentText = player.GetVar("kozterulet");
+
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("kozterulet", buttonValue);
+}
+}
+
+window.Script1505 = function()
+{
+  var player = GetPlayer();
 var currentText = player.GetVar("telepules");
 
 var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
@@ -19006,235 +19105,136 @@ if (buttonValue) {
 }
 }
 
-window.Script1503 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("kartya");
-
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "1");
-} else {
-    player.SetVar("kartya", currentText + "1");
-}
-}
-
-window.Script1504 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("kartya");
-
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "2");
-} else {
-    player.SetVar("kartya", currentText + "2");
-}
-}
-
-window.Script1505 = function()
-{
-  var player = GetPlayer();
-var currentText = player.GetVar("kartya");
-
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "3");
-} else {
-    player.SetVar("kartya", currentText + "3");
-}
-}
-
 window.Script1506 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kartya");
+var currentText = player.GetVar("telepules");
 
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "4");
-} else {
-    player.SetVar("kartya", currentText + "4");
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script1507 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kartya");
+var currentText = player.GetVar("telepules");
 
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "5");
-} else {
-    player.SetVar("kartya", currentText + "5");
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script1508 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kartya");
+var currentText = player.GetVar("telepules");
 
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "6");
-} else {
-    player.SetVar("kartya", currentText + "6");
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script1509 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kartya");
+var currentText = player.GetVar("telepules");
 
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "7");
-} else {
-    player.SetVar("kartya", currentText + "7");
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script1510 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kartya");
+var currentText = player.GetVar("telepules");
 
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "8");
-} else {
-    player.SetVar("kartya", currentText + "8");
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script1511 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kartya");
+var currentText = player.GetVar("telepules");
 
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "9");
-} else {
-    player.SetVar("kartya", currentText + "9");
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script1512 = function()
 {
   var player = GetPlayer();
-var currentText = player.GetVar("kartya");
+var currentText = player.GetVar("telepules");
 
-if (currentText.length >= 4) {
-    player.SetVar("kartya", "0");
-} else {
-    player.SetVar("kartya", currentText + "0");
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
 }
 }
 
 window.Script1513 = function()
 {
-  function enterFullscreen() {
-    var element = document.documentElement;
-    var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  var player = GetPlayer();
+var currentText = player.GetVar("telepules");
 
-    if (!isIOS) {
-        if (element.requestFullscreen) {
-            element.requestFullscreen();
-        } else if (element.mozRequestFullScreen) {
-            element.mozRequestFullScreen();
-        } else if (element.webkitRequestFullscreen) {
-            element.webkitRequestFullscreen();
-        } else if (element.msRequestFullscreen) {
-            element.msRequestFullscreen();
-        }
-    } else {
-        // iOS: csak videót lehet fullscreenre rakni
-        var video = document.querySelector("video");
-        if (video && video.webkitEnterFullscreen) {
-            video.webkitEnterFullscreen();
-        } else {
-            alert("iOS-en csak videót lehet teljes képernyőre rakni.");
-        }
-    }
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
 }
-
-enterFullscreen();
-
 }
 
 window.Script1514 = function()
 {
-  function exitFullscreen() {
-    if (document.exitFullscreen) {
-        document.exitFullscreen();
-    } else if (document.mozCancelFullScreen) { // Firefox
-        document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) { // Chrome, Safari
-        document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) { // IE / Edge
-        document.msExitFullscreen();
-    }
-}
+  var player = GetPlayer();
+var currentText = player.GetVar("telepules");
 
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
 }
 
 window.Script1515 = function()
 {
-  function enterFullscreen() {
-    var element = document.documentElement;
-    var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  var player = GetPlayer();
+var currentText = player.GetVar("telepules");
 
-    if (!isIOS) {
-        if (element.requestFullscreen) {
-            element.requestFullscreen();
-        } else if (element.mozRequestFullScreen) {
-            element.mozRequestFullScreen();
-        } else if (element.webkitRequestFullscreen) {
-            element.webkitRequestFullscreen();
-        } else if (element.msRequestFullscreen) {
-            element.msRequestFullscreen();
-        }
-    } else {
-        // Keresünk vagy létrehozunk egy rejtett videót
-        var video = document.getElementById("hiddenFullscreenVideo");
-        if (!video) {
-            video = document.createElement("video");
-            video.id = "hiddenFullscreenVideo";
-            video.src = "data:video/mp4;base64,AAAAIGZ0eXBtcDQyAAAAAG1wNDFtcDQyaXNvbTEyMAAAAG1vb3YAAABsbXZoZAAAAAB8JgB8JgAAAAAAAGQAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAABhzdHRzAAAAAAAAAAEAAAABAAAAAA=="; // 1 képkockás, üres mp4
-            video.setAttribute("playsinline", "true");
-            video.style.position = "absolute";
-            video.style.width = "1px";
-            video.style.height = "1px";
-            video.style.opacity = "0";
-            document.body.appendChild(video);
-        }
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
 
-        // Fullscreen kérés
-        if (video.webkitEnterFullscreen) {
-            video.play().then(() => {
-                video.webkitEnterFullscreen();
-            }).catch(() => {
-                alert("Nem sikerült fullscreen módba lépni.");
-            });
-        } else {
-            alert("Ez az iOS böngésző nem támogatja a fullscreen módot.");
-        }
-    }
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
 }
-
-enterFullscreen();
-
 }
 
 window.Script1516 = function()
 {
-  function exitFullscreen() {
-    if (document.exitFullscreen) {
-        document.exitFullscreen();
-    } else if (document.mozCancelFullScreen) { // Firefox
-        document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) { // Chrome, Safari
-        document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) { // IE / Edge
-        document.msExitFullscreen();
-    }
-}
+  var player = GetPlayer();
+var currentText = player.GetVar("telepules");
 
+var buttonValue = event.target.getAttribute("data-acc-text") || event.currentTarget.getAttribute("data-acc-text");
+
+if (buttonValue) {
+    player.SetVar("telepules", buttonValue);
+}
 }
 
 window.Script1517 = function()
