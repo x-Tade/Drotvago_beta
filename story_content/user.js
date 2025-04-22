@@ -12754,15 +12754,15 @@ if (buttonValue) {
 window.Script1011 = function()
 {
   var player = GetPlayer();
-var text = player.GetVar("hazszam");
-player.SetVar("hazszam", text.slice(0, -1));
+var text = player.GetVar("letesitmeny");
+player.SetVar("letesitmeny", text.slice(0, -1));
 }
 
 window.Script1012 = function()
 {
   var player = GetPlayer();
-var text = player.GetVar("letesitmeny");
-player.SetVar("letesitmeny", text.slice(0, -1));
+var text = player.GetVar("hazszam");
+player.SetVar("hazszam", text.slice(0, -1));
 }
 
 window.Script1013 = function()
