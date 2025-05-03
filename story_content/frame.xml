@@ -13,7 +13,7 @@
         <options>
           <option name="title_enabled" value="false">
             <options>
-              <option name="title_text" value="Drotvago_beta_v0.5.3" />
+              <option name="title_text" value="Drotvago_beta_v0.6.0" />
             </options>
           </option>
           <option name="logo_enabled" value="false">
@@ -1574,6 +1574,8 @@
         <slidelink slideid="_player.6M30MrPF8Z9" displaytext="1 játékos" expand="true" type="slide">
           <links>
             <slidelink slideid="_player.6M30MrPF8Z9.5tofCnSpLEH" displaytext="1 játékos START" expand="false" type="slide" />
+            <slidelink slideid="_player.6M30MrPF8Z9.6XZeFAx6Amk" displaytext="bevezeto1" expand="false" type="slide" />
+            <slidelink slideid="_player.6M30MrPF8Z9.6W3kXi0gYs2" displaytext="bevezeto2" expand="false" type="slide" />
             <slidelink slideid="_player.6M30MrPF8Z9.5bOuVlASLyX" displaytext="Iroda" expand="false" type="slide" />
             <slidelink slideid="_player.6M30MrPF8Z9.5a6XLDnD0P9" displaytext="Hétvégi ház külső" expand="false" type="slide" />
             <slidelink slideid="_player.6M30MrPF8Z9.5jlpHZtwG2f" displaytext="Hétvégi ház belső" expand="false" type="slide" />
@@ -1587,11 +1589,14 @@
             <slidelink slideid="_player.6M30MrPF8Z9.5k6Um4n5oc7" displaytext="LOSE" expand="false" type="slide" />
             <slidelink slideid="_player.6M30MrPF8Z9.6ZnoAUfnet1" displaytext="Köztes1" expand="false" type="slide" />
             <slidelink slideid="_player.6M30MrPF8Z9.5dN8O5QfhFM" displaytext="Köztes2" expand="false" type="slide" />
+            <slidelink slideid="_player.6M30MrPF8Z9.6NXw5JlAvVT" displaytext="Köztes3" expand="false" type="slide" />
           </links>
         </slidelink>
         <slidelink slideid="_player.6qsfIiibzpU" displaytext="2 játékos" expand="true" type="slide">
           <links>
             <slidelink slideid="_player.6qsfIiibzpU.6kxhVjBKEgV" displaytext="2 játékos START" expand="false" type="slide" />
+            <slidelink slideid="_player.6qsfIiibzpU.6kEcJ4RPexA" displaytext="2 játékos START" expand="false" type="slide" />
+            <slidelink slideid="_player.6qsfIiibzpU.6CI544Bz4Gj" displaytext="2 játékos START" expand="false" type="slide" />
             <slidelink slideid="_player.6qsfIiibzpU.6SpXs358d0O" displaytext="Köztes3" expand="false" type="slide" />
             <slidelink slideid="_player.6qsfIiibzpU.5gy7tqEDtrg" displaytext="Iroda" expand="false" type="slide" />
             <slidelink slideid="_player.6qsfIiibzpU.5VXHrVPxe8g" displaytext="Hétvégi ház külső" expand="false" type="slide" />
